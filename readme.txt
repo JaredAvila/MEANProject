@@ -4,3 +4,5 @@ Ok, it appears that the node modules did NOT get pushed. So yeah, NPM install. S
 
 Justin:
 Added gitignore file used in the MAEN deployment section.
+
+If I'm not mistaken, github prevents "node_modules" from being pushed because they're so big.
