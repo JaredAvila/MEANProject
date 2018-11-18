@@ -13,3 +13,5 @@ Ok, it appears that the node modules did NOT get pushed. So yeah, NPM install. S
 (Justin) Also, I'm making a trello page for our project to help us manage our tasks and track our progress. I'll send you guys an invite once it's done.
 
 (Jared) jQuery seems to be working just fine. It's bootstrap that I am having issues with. I can't get the carousel to work... might have to scrap it or build it myself if we have time. Gonna use a static image for now so I can move on with the layout of the whole page and come back to it later
+
+(Kirk) I noticed that everytime we add to the readme.txt file, it is commited and loggged. Is it much better to have our conversation on a different platform so that the commits made are exclusively for the files we are working on? For traceability purposes. I can set-up a group message in mattermost if your good with it? Please confirm. Thanks. 
