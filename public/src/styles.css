@@ -1,4 +1,69 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    cursor: default;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(to bottom right, rgb(22, 22, 22), rgb(97, 97, 97));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.bttn{
+    padding: 10px;
+    border-radius: 4px;
+    outline:none;
+    border:none;
+    font-size: 14pt;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.bttn:hover{
+    background-color: rgb(165, 165, 165);
+}
+
+.bttn:active{
+    background-color: rgb(110, 110, 110);
+}
+
+.bttn-ltBlue{
+    background-color: rgb(0, 174, 255);
+    color: rgb(34, 34, 34);
+}
+
+.bttn-ltBlue:hover{
+    background-color: rgb(2, 147, 214);
+}
+
+.bttn-ltBlue:active{
+    background-color: rgb(3, 125, 182);
+}
+
+.bttn-green{
+    background-color: rgb(0, 255, 106);
+    color: rgb(34, 34, 34);
+}
+
+.bttn-green:hover{
+    background-color: rgb(3, 211, 89);
+}
+
+.bttn-green:active{
+    background-color: rgb(0, 163, 68);
+}
+
+@media only screen and (max-width: 480px){}
+@media only screen and (min-width: 481px){}
+@media only screen and (min-width: 1000px){
+    body{
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7) ), url(./img/carbon-fiber.png);
+        background-size: cover;
+    }
 }

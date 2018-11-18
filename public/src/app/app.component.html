@@ -1,2 +1,37 @@
-<img src="https://smittenkitchendotcom.files.wordpress.com/2017/08/german-chocolate-wedding-cake.jpg?w=750">
+<div id="nav-bar">
+    <div id="SearchIcon">
+        <i id="hourGlass" class="fas fa-search fa-2x"></i>
+        <i id="closeX" class="fas fa-times fa-2x"></i>
+    </div>
+    <div id="searchBar">
+        <form action="">
+            <input type="text" placeholder="Search Items">
+            <select name="">
+                <option value="">Categories</option>
+                <option value="">Cars/Bicycles</option>
+                <option value="">Fashion/Accessories</option>
+                <option value="">Electronics/Tech</option>
+                <option value="">Household/Outdoors</option>
+                <option value="">Art/Music</option>
+                <option value="">Collectables</option>
+            </select>
+            <button class="bttn">Search</button>
+        </form>
+    </div>
+    <div id="burgerMenu">
+        <div class="hBurer" (click)="hBurgerMenu()">
+            <div class="{{ hBurgerChange1 }}"></div>
+            <div class="{{ hBurgerChange2 }}"></div>
+            <div class="{{ hBurgerChange3 }}"></div>
+        </div>
+    </div>
+</div>
+<div id="nav-bar-lower">
+    <button class="bttn bttn-green">Start Selling</button>
+    <p class="lines">Login</p>
+    <p class="lines">Register for free</p>
+    <p class="lines">My Profile</p>
+    <p class="lines">Contact us</p>
+
+</div>
 <router-outlet></router-outlet>
