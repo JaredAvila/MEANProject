@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from '../http.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.user = {};
+    $('document').ready(function () {
+        $(".button").click(function () {
+            $(".button").animate({ width: '72px' }, 150);
+            $('.button').html("<div class='loader'></div>")
+        });
+    });
   }
   
   loginUser() {

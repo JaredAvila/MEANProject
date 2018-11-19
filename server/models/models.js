@@ -16,7 +16,7 @@ module.exports = function() {
         image: {type: String, required: [true, 'Please provide an image url'] },
         starting_bid: {type: Number, required: [true, 'Starting bid cannot be blank'] },
         start_date: {type: Date, required: [true, 'Start date cannot be blank'] },
-        duration: {type: Date, required: [true, 'Duration cannot be blank'] },
+        duration: {type: String, required: [true, 'Duration cannot be blank'] },
     }, {timestamps: true });
 
     var userSchema = new mongoose.Schema({

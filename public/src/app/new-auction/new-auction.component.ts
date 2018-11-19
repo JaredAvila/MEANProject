@@ -26,11 +26,16 @@ export class NewAuctionComponent implements OnInit {
       showWeeks: false,
       showSeconds: false
     }
+    console.log( sessionStorage.getItem('userId') );
+    
   }
 
   createAuction() {
-    let obs = this._httpService.createAuction(this.newAuction)
+    this.newAuction['userId'] = sessionStorage.getItem('userId');
+    console.log(this.newAuction);
+    let obs = this._httpService.createAuction(this.newAuction);
     obs.subscribe(res => {
+      console.log(res);
       if (res['data']['errors']) {
         console.log(res['data']['errors']);
       } else {

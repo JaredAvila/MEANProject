@@ -1,4 +1,4 @@
-<div class="cont">
+<!-- <div class="cont">
     <form (submit)="loginUser()">
       <label>Email</label>
       <input type="email" placeholder="Enter email" name="email" [(ngModel)]="user.email">
@@ -7,4 +7,17 @@
       <button type="submit">Submit</button>
     </form>
   </div>
-  
+   -->
+
+<div id="wrap">
+  <div class="container">
+    <form (submit)="loginUser()">
+      <input type="email" placeholder="EMAIL" name="email" [(ngModel)]="user.email">
+      <input type="password" placeholder="PASSWORD" name="password" [(ngModel)]="user.password">
+      <button type="submit" class="button">SUBMIT</button>
+    </form>
+    <!--____________________________________for error messages___________________________________________-->
+    <p style="color: rgb(223, 14, 14); font-weight: bold;"></p>
+    <p id="regLink"><a [routerLink]="['/register']">Register new account</a></p>
+  </div>
+</div>
