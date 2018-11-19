@@ -86,12 +86,12 @@ button.button#redBtn{
 button.button#greenBtn{
     background-color: rgb(59, 255, 124);
 }
-input#email{
+input.email{
     background-color: rgb(189, 189, 189);
     transition: background-color 500ms;
     cursor: default;
 }
-input#email:focus{
+input.email:focus{
     background-color: rgb(226, 226, 226);
 }
 
