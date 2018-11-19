@@ -22,8 +22,8 @@ export class HttpService {
   updateUserById(id: string, user: object) {
     return this._http.put('/api/users/update' + id, user)
   }
-  nukeUserById(userId: string, bookId: string) {
-    return this._http.delete('/api/users/delete/'+ userId +'/:bookId' + bookId)
+  nukeUserById(userId: string, categoryId: string) {
+    return this._http.delete('/api/users/delete/'+ userId +'/:categoryId' + categoryId)
   }
   loginUser(user: object) {
     return this._http.post('/api/login', user);
@@ -36,13 +36,13 @@ export class HttpService {
   getAuctionById(id: string) {
     return this._http.get('/api/auctions/' + id)
   }
-  createAuction(user: object) {
-    return this._http.post('/api/auctions/new', user)
+  createAuction(auction: object) {
+    return this._http.post('/api/auctions/new', auction)
   }
-  updateAuctionById(id: string, user: object) {
-    return this._http.put('/api/auctions/update' + id, user)
+  updateAuctionById(id: string, auction: object) {
+    return this._http.put('/api/auctions/update' + id, auction)
   }
-  nukeAuctionById(userId: string, bookId: string) {
-    return this._http.delete('/api/auctions/delete/'+ userId +'/:bookId' + bookId)
+  nukeAuctionById(auctionId: string, categoryId: string) {
+    return this._http.delete('/api/auctions/delete/'+ auctionId +'/:categoryId' + categoryId)
   }
 }

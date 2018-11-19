@@ -35,13 +35,13 @@ module.exports = function(app) {
     app.get('/api/auctions/:id', (req, res) => {
         auctions.getAuctionById(req, res)
     })
-    app.post('/api/auctions/new/:userId/', (req, res) => {
+    app.post('/api/auctions/new', (req, res) => {
         auctions.createAuction(req, res)
     })
     app.put('/api/auctions/update/:userId/:auctionId', (req, res) => {
         auctions.updateAuctionById(req, res)
     })
-    app.delete('/api/auctions/delete/:categoryName/:userId/:auctionId', (req, res) => {
+    app.delete('/api/auctions/delete/:auctionId', (req, res) => {
         auctions.nukeAuctionById(req, res)
     })
 

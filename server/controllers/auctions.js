@@ -47,7 +47,7 @@ module.exports = {
                 res.json({status: false, message: "Create Auction", data: err})
             } else {
                 // then add the created auction to the user
-                User.findOneAndUpdate({_id: req.params.userId}, {$push: {auctions_created: auction}}, (err) => {
+                User.findOneAndUpdate({_id: req.body.userId}, {$push: {auctions_created: auction}}, (err) => {
                     if (err) {
                         console.log(err)
                         res.json({status: false, message: "Add Auction to User", data: err})
@@ -144,7 +144,7 @@ module.exports = {
             } else {
                 console.log("Deleted Auction")
                 // delete auction from a user
-                User.findOne({_id: req.params.userId}, (err, user) => {
+                User.findOne({_id: req.body.userId}, (err, user) => {
                     let aucs = user.auctions_created;
                     // find the auction in the array then splice
                     for (var i = 0; i < aucs.length; i++) {
@@ -159,7 +159,7 @@ module.exports = {
                             res.json({status: false, message: "Delete Auction in a User", data: err})
                         } else {
                             // do the same with auciton in a category
-                            Category.findOne({name: req.params.categoryName}, (err, category) => {
+                            Category.findOne({name: req.body.categoryName}, (err, category) => {
                                 let aucs = category.auctions;
                                 for (var k = 0; k < aucs.length; k++) {
                                     if (aucs[k]['_id'] == req.params.auctionId) {
