@@ -18,6 +18,15 @@
             <button class="bttn">Search</button>
         </form>
     </div>
+    <div id="fullSell">
+        <button class="bttn bttn-dark">Start Selling</button>
+        <button class="bttn bttn-clear">Free Registration</button>
+        <p><a href="#"><i class="far fa-user"> My Profile</i></a></p>
+        <p><a href="#"><i class="far fa-comments"> Contact Us</i></a></p>
+
+    </div>
+
+    <img src="../assets/img/logo.png" alt="">
     <div id="burgerMenu">
         <div class="hBurer" (click)="hBurgerMenu()">
             <div class="{{ hBurgerChange1 }}"></div>
@@ -34,5 +43,43 @@
     <p class="lines">Contact us</p>
 
 </div>
+
 <app-home></app-home>
+
+<div id="footer">
+    <div class="footerDivs" id="footImg">
+        <img src="../assets/img/logo.png" alt="">
+        <h2>Company Name</h2>
+        <p>Helping you sell and buy online since 2018</p>
+    </div>
+    <div class="footerDivs" id="accessLinks">
+        <h4>Quick Access</h4>
+        <ul>
+            <li><a href="#">Start Selling</a></li>
+            <li id="footerCatsHov">Browse Categories <i class="fas fa-caret-down"></i>
+                <ul id="footerCats">
+                    <li><a href="#">Cars/Bicycles</a></li>
+                    <li><a href="#">Fashion/Accessories</a></li>
+                    <li><a href="#">Electronics/Tech</a></li>
+                    <li><a href="#">Art/Music</a></li>
+                    <li><a href="#">Collectables</a></li>
+                </ul>
+                
+            </li>
+            <li><a href="#">Register Free Account</a></li>
+            <li><a href="#">View Profile</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#"></a></li>
+        </ul>
+
+    </div>
+    <div class="downloads footerDivs">
+        <h2><span class="nums">109,420</span> items currently up for bid, go and <span>1-up</span> someone!</h2>
+        <img src="../assets/img/apple.png" alt="">
+    </div>
+    <div class="downloads footerDivs">
+        <h2><span class="nums">Download</span> our fantastic <span>mobile app</span> for free!</h2>
+        <img src="../assets/img/google.png" alt="">
+    </div>
+</div>
 <router-outlet></router-outlet>

@@ -75,13 +75,26 @@ body{
     background-color: rgb(37, 37, 37);
 }
 
+.bttn-clear{
+    background: transparent;
+}
+
+.bttn-clear:hover{
+    background-color: rgb(230, 230, 230);
+    opacity: .2;
+}
+
+.bttn-clear:active{
+    background-color: rgb(37, 37, 37);
+}
+
 
 
 @media only screen and (max-width: 480px){}
 @media only screen and (min-width: 481px){}
 @media only screen and (min-width: 1000px){
     body{
-        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7) ), url(./assets/img/carbon-carbon-fiber-dark-596815.jpg);
+        background: url(./assets/img/carbon-carbon-fiber-dark-596815.jpg);
         background-size: cover;
     }
 }

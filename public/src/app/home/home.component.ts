@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
         $("#side").animate({height: '20px'}, 500);
       });
     });
+
+  //carousel imgages-------------------------------------------
     this.items = [
       { name: 'assets/img/prod1.jpeg' },
       { name: 'assets/img/prod2.jpeg' },

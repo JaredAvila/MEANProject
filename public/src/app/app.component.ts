@@ -12,18 +12,21 @@ export class AppComponent implements OnInit {
   title = 'Look jQuery Animation working in action!';
   ngOnInit() {
     {
+  //-----------------jQuery--------------------------------------------------
       $('document').ready(function () {
         $("#SearchIcon").on('click', function(){
           $("#closeX").toggle();
           $("#hourGlass").toggle();
           $("#searchBar").toggle(100);
-          $("#burgerMenu").toggle(300, "swing");
         })
         $('#burgerMenu').on('click', function(){
           $("#nav-bar-lower").toggle(300);
         });
         $('.lines').on('mouseover', function(){
           $(this).animate({borderBottom: '1px solid black' }, "swing")
+        })
+        $("#footerCatsHov").on('click', function(){
+          $("#footerCats").toggle(200);
         })
       });
     }
@@ -48,5 +51,4 @@ export class AppComponent implements OnInit {
       this.hBurgerChange3 = 'bar3'
     }
   }
-  //search bar hide/show
 }

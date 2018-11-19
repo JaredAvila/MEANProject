@@ -4,6 +4,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     background-color: rgb(0, 174, 255);
+    align-items: center;
 }
 
 #searchBar {
@@ -95,6 +96,79 @@
     transition: width 1s;
 }
 
+#footer{
+    background-color: rgb(26, 26, 26);
+    display: flex;
+}
+
+.footerDivs{
+    margin: 10px;
+    width: 20%;
+    padding: 5px;
+}
+
+#footImg{
+    text-align: center;
+}
+#footImg img{
+    height: 200px;
+}
+
+#accessLinks{
+    width: fit-content;
+}
+
+#accessLinks h4{
+    color: gray;
+    font-size: 20pt;
+    margin-bottom: 30px;
+}
+
+#accessLinks ul li{
+    display: block;
+    margin: 5px 0;
+}
+
+#footerCatsHov{
+    cursor: pointer;
+}
+
+#footerCatsHov:hover{
+    color: gray;
+}
+
+#footerCats{
+    display: none;
+    margin-left:20px;
+}
+
+.downloads{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.downloads img{
+    width: 100%;
+}
+
+.downloads H2{
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.downloads span{
+    color: rgb(0, 174, 255);
+}
+
+.downloads span.nums{
+    color: rgb(107, 107, 107);
+}
+
+.ng2-carouselamos-container[_ngcontent-c2] {
+    position: unset;
+}
+
 @media only screen and (max-width: 480px) {
     #searchBar form input, #searchBar form select {
         font-size: 10pt;
@@ -107,12 +181,84 @@
     #searchBar form input {
         border: 1px solid white
     }
+    #fullSell{
+        display: none;
+    }
+    #footer{
+        flex-wrap: wrap;
+    }
+
+    #nav-bar img{
+        display: none;
+    }
+    #footImg{
+        display: none;
+    }
+
+    #footer{
+        flex-direction: column;
+    }
+    .footerDivs{
+        width: fit-content;
+    }
 }
 
 @media only screen and (min-width: 481px) {
     #searchBar form input {
         border: 1px solid white
     }
+    #nav-bar img{
+        height: 80px;
+    }
+    #fullSell{
+        display: none;
+    }
+    #nav-bar-lower{
+        width: 50%;
+    }
+    #footImg{
+        display: none;
+    }
+    #footer{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
-@media only screen and (min-width: 1000px) {}
+@media only screen and (min-width: 1000px) {
+    #nav-bar {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        background-color: rgb(0, 174, 255);
+    }
+    #burgerMenu{
+        display: none;
+    }
+    #fullSell{
+        display: flex;
+        align-items: center;
+    }
+
+    #fullSell p{
+        margin: 5px 15px;
+    }
+
+    #fullSell p a{
+        color: rgb(31, 31, 31);
+    }
+    #fullSell p a:hover{
+        color: rgb(156, 211, 255);
+    }
+    #fullSell p a:active{
+        color: rgb(58, 84, 105);
+    }
+    #footer{
+        padding: 100px;
+    }
+    #footImg{
+        display: block;
+    }
+
+}
