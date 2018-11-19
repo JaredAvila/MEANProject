@@ -1,4 +1,4 @@
-<div class="cont">
+<!-- <div class="cont">
   <form (submit)="createUser()">
     <label>First Name</label>
     <input type="text" placeholder="First Name" name="first_name" [(ngModel)]="newUser.first_name">
@@ -10,4 +10,18 @@
     <input type="password" placeholder="Password" name="password" [(ngModel)]="newUser.password">
     <button type="submit">Submit</button>
   </form>
-</div>
+</div> -->
+
+<div id="wrap">
+  <div class="container">
+    <form (submit)="createUser()">
+      <input type="text" placeholder="FIRST NAME" name="first_name" [(ngModel)]="newUser.first_name">
+      <input type="text" placeholder="LAST NAME" name="last_name" [(ngModel)]="newUser.last_name">
+      <input type="email" placeholder="EMAIL" name="email" [(ngModel)]="newUser.email">
+      <input type="password" placeholder="PASSWORD" name="password" [(ngModel)]="newUser.password">
+      <button type="submit" class="button">SUBMIT</button>
+      <!--__________________Error messages________________________________________________________________-->
+      <p style="color: rgb(209, 13, 13);"></p>
+      <p><a href="login.html">Login</a></p>
+    </form>
+  </div>
