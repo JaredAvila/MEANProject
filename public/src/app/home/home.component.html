@@ -1,0 +1,92 @@
+<div id="wrap">
+  <div id="side">
+    <h2 id="catClick">Categories</h2>
+    <ul>
+      <li><a href="www.google.com">Cakes</a></li>
+      <li><a href="www.google.com">Automobiles/Transportation</a></li>
+      <li><a href="www.google.com">Fashion/Accessories</a></li>
+      <li><a href="www.google.com">Electronics/Tech</a></li>
+      <li><a href="www.google.com">Toys/Games</a></li>
+      <li><a href="www.google.com">Household/Outdoors</a></li>
+      <li><a href="www.google.com">Art/Music</a></li>
+      <li><a href="www.google.com">Books/Comics</a></li>
+      <li><a href="www.google.com">Shoes/Clothing</a></li>
+    </ul>
+    <button class="bttn bttn-ltBlue" id="hideBtn">Close</button>
+  </div>
+  <div id="show">
+    <div id="carousel">
+      <div ng2-carouselamos class="slides-wrapper" [items]="items" [width]="900" [$prev]="prev" [$next]="next" [$item]="item">
+      </div>
+      <ng-template #prev>
+        <i class="fas fa-chevron-left fa-3x" id="left"></i>
+      </ng-template>
+      <ng-template #next>
+        <i class="fas fa-chevron-right fa-3x" id="right"></i>
+      </ng-template>
+      <ng-template #item let-item let-i="index">
+        <div class="items">
+          <img src="{{ item.name }}">
+        </div>
+      </ng-template>
+    </div>
+    <div id="auctions">
+      <div class="auction">
+        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
+          alt="">
+        <div id="cardInfo">
+          <h3>Kirk's Cake</h3>
+          <p>Current bid:</p>
+          <h2>$24.99</h2>
+          <p>Time left:</p>
+          <h2>12:31:09</h2>
+        </div>
+
+        <div id="cardBtns">
+          <button class="bttn bttn-green">Bid Now</button>
+          <button class="bttn bttn-ltBlue">View Auction</button>
+        </div>
+      </div>
+      <div class="auction">
+        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
+          alt="">
+        <h3>Kirk's Cake</h3>
+        <p>Current bid:</p>
+        <h2>$24.99</h2>
+        <p>Time left:</p>
+        <h2>12:31:09</h2>
+        <button class="bttn bttn-green">Bid Now</button>
+      </div>
+      <div class="auction">
+        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
+          alt="">
+        <h3>Kirk's Cake</h3>
+        <p>Current bid:</p>
+        <h2>$24.99</h2>
+        <p>Time left:</p>
+        <h2>12:31:09</h2>
+        <button class="bttn bttn-green">Bid Now</button>
+      </div>
+      <div class="auction">
+        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
+          alt="">
+        <h3>Kirk's Cake</h3>
+        <p>Current bid:</p>
+        <h2>$24.99</h2>
+        <p>Time left:</p>
+        <h2>12:31:09</h2>
+        <button class="bttn bttn-green">Bid Now</button>
+      </div>
+      <div class="auction">
+        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
+          alt="">
+        <h3>Kirk's Cake</h3>
+        <p>Current bid:</p>
+        <h2>$24.99</h2>
+        <p>Time left:</p>
+        <h2>12:31:09</h2>
+        <button class="bttn bttn-green">Bid Now</button>
+      </div>
+    </div>
+  </div>
+</div>

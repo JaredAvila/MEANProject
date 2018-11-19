@@ -9,6 +9,8 @@
 #searchBar {
     display: none;
     z-index: 1;
+    width: fit-content;
+    margin-left: auto;
 }
 
 #searchBar form input, #searchBar form select {
@@ -98,18 +100,18 @@
         font-size: 10pt;
         padding: 5px 0px;
     }
-    #searchBar form input {
-        border: 1px solid white;
-    }
     #searchBar button {
         padding: 5px;
         font-size: 10pt;
+    }
+    #searchBar form input {
+        border: 1px solid white
     }
 }
 
 @media only screen and (min-width: 481px) {
     #searchBar form input {
-        border-top: 1px solid white;
+        border: 1px solid white
     }
 }
 
