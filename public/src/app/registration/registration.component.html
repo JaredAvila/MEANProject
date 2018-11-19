@@ -1,0 +1,13 @@
+<div class="cont">
+  <form (submit)="createUser()">
+    <label>First Name</label>
+    <input type="text" placeholder="First Name" name="first_name" [(ngModel)]="newUser.first_name">
+    <label>Last Name</label>
+    <input type="text" placeholder="Last Name" name="last_name" [(ngModel)]="newUser.last_name">
+    <label>Email address</label>
+    <input type="email" placeholder="Enter email" name="email" [(ngModel)]="newUser.email">
+    <label>Password</label>
+    <input type="password" placeholder="Password" name="password" [(ngModel)]="newUser.password">
+    <button type="submit">Submit</button>
+  </form>
+</div>

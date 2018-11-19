@@ -1,0 +1,10 @@
+<div class="cont">
+    <form (submit)="loginUser()">
+      <label>Email</label>
+      <input type="email" placeholder="Enter email" name="email" [(ngModel)]="user.email">
+      <label>Password</label>
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

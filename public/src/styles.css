@@ -95,6 +95,5 @@ body{
 @media only screen and (min-width: 1000px){
     body{
         background: url(./assets/img/carbon-carbon-fiber-dark-596815.jpg);
-        background-size: cover;
     }
 }

@@ -30,7 +30,7 @@ module.exports = function() {
             required: [true, 'Email address is required'],
             validate: emailValidator
         },
-        passwordHash: { 
+        password: { 
             type: String, required: [true, "Password cannot be blank"], minlength: [8, "Password must contain at least 8 characters"]
         },
         wallet_balance: { type: Number },
