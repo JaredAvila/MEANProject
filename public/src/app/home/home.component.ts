@@ -15,22 +15,27 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     $('document').ready(function () {
       $("#catClick").on('click', function(){
-        $("#side").animate({height: '400px'}, 1000);
+        $("#side").animate({height: '400px'}, 500);
       });
       $("#hideBtn").on('click', function(){
-        $("#side").animate({height: '20px'}, 1000);
+        $("#side").animate({height: '20px'}, 500);
       });
     });
     this.items = [
-      { name: 'assets/img/car1.jpeg' },
-      { name: 'assets/img/car2.jpeg' },
-      { name: 'assets/img/car3.jpeg' },
-      { name: 'assets/img/car1.jpeg' },
-      { name: 'assets/img/car2.jpeg' },
-      { name: 'assets/img/car3.jpeg' },
-      { name: 'assets/img/car1.jpeg' },
-      { name: 'assets/img/car2.jpeg' },
-      { name: 'assets/img/car3.jpeg' }
+      { name: 'assets/img/prod1.jpeg' },
+      { name: 'assets/img/prod2.jpeg' },
+      { name: 'assets/img/prod3.jpeg' },
+      { name: 'assets/img/prod4.jpeg' },
+      { name: 'assets/img/prod5.jpeg' },
+      { name: 'assets/img/prod6.jpeg' },
+      { name: 'assets/img/prod7.jpeg' },
+      { name: 'assets/img/prod1.jpeg' },
+      { name: 'assets/img/prod2.jpeg' },
+      { name: 'assets/img/prod3.jpeg' },
+      { name: 'assets/img/prod4.jpeg' },
+      { name: 'assets/img/prod5.jpeg' },
+      { name: 'assets/img/prod6.jpeg' },
+      { name: 'assets/img/prod7.jpeg' }
     ]
   }
   
