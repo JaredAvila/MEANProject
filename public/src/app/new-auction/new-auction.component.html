@@ -1,0 +1,18 @@
+<div class="cont">
+    <form (submit)="createAuction()">
+      <label>Item Name</label>
+      <input type="text" name="item_name" [(ngModel)]="newAuction.item_name">
+      <label>Description</label>
+      <input type="text" name="description" [(ngModel)]="newAuction.description">
+      <label>Image</label>
+      <input type="text" name="image" [(ngModel)]="newAuction.image">
+      <label>Starting Bid</label>
+      <input type="number" name="starting_bid" [(ngModel)]="newAuction.starting_bid">
+      <label>Start Date</label>
+      <input type="date" name="start_date" [(ngModel)]="newAuction.start_date">
+      <label>Duration</label>
+      <ngx-duration-picker [(value)]="newAuction.start_date" [options]="durationPickerOptions"></ngx-duration-picker>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

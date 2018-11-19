@@ -31,8 +31,8 @@ module.exports = {
                 console.log(err)
                 res.json({status: false, message: "Register User", data: err})
             } else {
-                bcrypt.hash(req.body.passwordHash, 10, (err, hash) => {
-                    user.passwordHash = hash;
+                bcrypt.hash(req.body.password, 10, (err, hash) => {
+                    user.password = hash;
                     user.save((err, user) => {
                         if (err) {
                             console.log(err)
@@ -83,7 +83,7 @@ module.exports = {
                 console.log(err)
                 res.json({status: false, message: "Login User 2", data: err})
             } else {
-                bcrypt.compare(req.body.password, user.passwordHash, (err, verified) => {
+                bcrypt.compare(req.body.password, user.password, (err, verified) => {
                     if (verified) {
                         let response = {
                             userId: user._id,
@@ -91,7 +91,6 @@ module.exports = {
                         }
                         res.json({status: true, message: "Login User 3", data: response});
                     } else {
-                        console.log(err)
                         res.json({status: false, message: "Login User 3", data: err})
                     }
                 })
