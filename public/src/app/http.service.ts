@@ -28,4 +28,21 @@ export class HttpService {
   loginUser(user: object) {
     return this._http.post('/api/login', user);
   }
+
+  // AUCTION ROUTES
+  getAllAuctions() {
+    return this._http.get('/api/auctions/all')
+  }
+  getAuctionById(id: string) {
+    return this._http.get('/api/auctions/' + id)
+  }
+  createAuction(user: object) {
+    return this._http.post('/api/auctions/new', user)
+  }
+  updateAuctionById(id: string, user: object) {
+    return this._http.put('/api/auctions/update' + id, user)
+  }
+  nukeAuctionById(userId: string, bookId: string) {
+    return this._http.delete('/api/auctions/delete/'+ userId +'/:bookId' + bookId)
+  }
 }

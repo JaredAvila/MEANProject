@@ -29,26 +29,24 @@ export class AppComponent implements OnInit {
   logoutUser() {
     sessionStorage.clear();
   }
-}
 
 
 //------------------------------NAVIGATION BAR--------------------------------------------------
+  //hamburger menu onClick animation
+  hBurgerChange1 = 'bar1'
+  hBurgerChange2 = 'bar2'
+  hBurgerChange3 = 'bar3'
 
-
-//hamburger menu onClick animation
-hBurgerChange1 = 'bar1'
-hBurgerChange2 = 'bar2'
-hBurgerChange3 = 'bar3'
-hBurgerMenu() {
-  if (this.hBurgerChange1 === 'bar1') {
-    this.hBurgerChange1 = 'bar1 change'
-    this.hBurgerChange2 = 'bar2 change'
-    this.hBurgerChange3 = 'bar3 change'
-  } else {
-    this.hBurgerChange1 = 'bar1'
-    this.hBurgerChange2 = 'bar2'
-    this.hBurgerChange3 = 'bar3'
+  hBurgerMenu() {
+    if (this.hBurgerChange1 === 'bar1') {
+      this.hBurgerChange1 = 'bar1 change'
+      this.hBurgerChange2 = 'bar2 change'
+      this.hBurgerChange3 = 'bar3 change'
+    } else {
+      this.hBurgerChange1 = 'bar1'
+      this.hBurgerChange2 = 'bar2'
+      this.hBurgerChange3 = 'bar3'
+    }
   }
-}
   //search bar hide/show
-}
+} 
