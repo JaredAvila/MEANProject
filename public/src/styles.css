@@ -8,7 +8,7 @@ html{
     width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6{
+#wrap h1,#wrap  h2,#wrap  h3,#wrap  h4,#wrap  h5,#wrap  h6{
     cursor: default;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -86,6 +86,13 @@ body{
 
 .bttn-clear:active{
     background-color: rgb(37, 37, 37);
+}
+
+.inputs{
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
 }
 
 

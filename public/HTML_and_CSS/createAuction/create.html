@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Auction</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/public/src/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="wrap">
+        <h1 id="newAct"><span>Create</span> a new auction</h1>
+        <div id="animatedBorder">
+            <form (submit)="something()">
+                <div class="formStyle">
+                    <label for="itemName">Whats the name of the item you're selling?</label>
+                    <input type="text" class="inputs" name="itemName" placeholder="Item name">
+                </div>
+                <div class="formStyle">
+                    <label for="category">What category?</label>
+                    <select class="inputs">
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                        <option value="">Jewelry</option>
+                    </select>
+                </div>
+                <div class="formStyle">
+                    <label for="itemName">Tell your potential buyers about the item.</label>
+                    <textarea class="inputs" name="desc" id="" cols="30" rows="10" placeholder="Item description"></textarea>
+                </div>
+                <div class="formStyle">
+                    <label for="itemName">Do you have a picture? We can link it to your auction for you!</label>
+                    <input class="inputs" type="text" name="imgUrl" placeholder="Image Url">
+                </div>
+                <div class="formStyle">
+                    <label for="startingBid">What do you want the starting to bid to be?</label>
+                    <input class="inputs" name="startingBid" type="number" value="5" min="0" step="1">
+                </div>
+                <div class="formStyle">
+                    <label>How long do you want the auction to be?</label>
+                    <input class="inputs" type="number" min="0" step="1" placeholder="Enter number of days">
+                </div>
+                <div class="formStyle">
+                    <label for="startDate">When do you want to start the bidding?</label>
+                    <input class="inputs" type="date">
+                </div>
+                <div class="formStyle">
+                    <label>Looking good? Let's send it off to be posted.</label>
+                    <button class="bttn bttn-ltBlue"><i class="far fa-paper-plane"> Send</i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

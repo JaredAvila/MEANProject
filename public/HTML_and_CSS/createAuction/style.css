@@ -1,0 +1,39 @@
+#wrap h1 {
+    color: white;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 7px;
+}
+
+#animatedBorder{
+    background-color: rgb(36, 36, 36);
+    border: 2px solid black;
+
+}
+
+#animatedBorder form{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+#animatedBorder form label{
+    color: rgb(185, 185, 185);
+    padding: 10px;
+    letter-spacing: 5px;
+    font-size: 14pt;
+}
+
+#animatedBorder input:focus, #animatedBorder textarea:focus{
+    background-color: rgb(172, 236, 255);
+}
+
+.formStyle{
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1#newAct span{
+    color:#00aeff;
+}

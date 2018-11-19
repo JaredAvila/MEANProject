@@ -1,20 +1,51 @@
-<div class="cont">
+<div id="wrap">
+  <h1 id="newAct"><span>Create</span> a new auction</h1>
+  <div id="animatedBorder">
     <form (submit)="createAuction()">
-      <label>Item Name</label>
-      <input type="text" name="item_name" [(ngModel)]="newAuction.item_name">
-      <label>Description</label>
-      <input type="text" name="description" [(ngModel)]="newAuction.description">
-      <label>Category</label>
-      <input type="text" name="category" [(ngModel)]="newAuction.category">
-      <label>Image</label>
-      <input type="text" name="image" [(ngModel)]="newAuction.image">
-      <label>Starting Bid</label>
-      <input type="number" name="starting_bid" [(ngModel)]="newAuction.starting_bid">
-      <label>Start Date</label>
-      <input type="date" name="start_date" [(ngModel)]="newAuction.start_date">
-      <label>Duration</label>
-      <ngx-duration-picker [(value)]="newAuction.duration" [options]="durationPickerOptions"></ngx-duration-picker>
-      <button type="submit">Submit</button>
+      <div class="formStyle">
+        <label for="itemName">Whats the name of the item you're selling?</label>
+        <input type="text" class="inputs" name="item_name" [(ngModel)]="newAuction.item_name" placeholder="Item name">
+      </div>
+      <div class="formStyle">
+        <label for="category">What category?</label>
+        <select class="inputs" name="category" [(ngModel)]="newAuction.category">
+          <option value="">Autos/Transportation</option>
+          <option value="">Fashion/Accessories</option>
+          <option value="">Electronics/Tech</option>
+          <option value="">Toys/Games</option>
+          <option value="">Household/Outdoors</option>
+          <option value="">Art/Music</option>
+          <option value="">Books/Comics</option>
+          <option value="">Shoes/Clothing</option>
+          <option value="">Collectables</option>
+        </select>
+      </div>
+      <div class="formStyle">
+        <label for="itemName">Tell your potential buyers about the item.</label>
+        <textarea class="inputs" name="description" [(ngModel)]="newAuction.description" cols="30" rows="10"
+          placeholder="Item description"></textarea>
+      </div>
+      <div class="formStyle">
+        <label for="itemName">Do you have a picture? We can link it to your auction for you!</label>
+        <input class="inputs" type="text" name="image" [(ngModel)]="newAuction.image" placeholder="Image Url">
+      </div>
+      <div class="formStyle">
+        <label for="startingBid">What do you want the starting to bid to be?</label>
+        <input class="inputs" name="starting_bid" [(ngModel)]="newAuction.starting_bid" type="number" placeholder="$5" min="0" step="1">
+      </div>
+      <div class="formStyle">
+        <label>How long do you want the auction to be?</label>
+        <ngx-duration-picker class="inputs" style="color: rgb(202, 202, 202)" [(value)]="newAuction.duration" [options]="durationPickerOptions"></ngx-duration-picker>
+        <!-- <input class="inputs" type="number" min="0" step="1" placeholder="Enter number of days"> -->
+      </div>
+      <div class="formStyle">
+        <label for="startDate">When do you want to start the bidding?</label>
+        <input class="inputs" type="date" name="start_date" [(ngModel)]="newAuction.start_date">
+      </div>
+      <div class="formStyle">
+        <label>Looking good? Let's send it off to be posted.</label>
+        <button class="bttn bttn-ltBlue"><i class="far fa-paper-plane"> Send</i></button>
+      </div>
     </form>
   </div>
-  
+</div>

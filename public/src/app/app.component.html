@@ -8,18 +8,21 @@
             <input type="text" placeholder="Search Items">
             <select name="">
                 <option value="">Categories</option>
-                <option value="">Cars/Bicycles</option>
+                <option value="">Autos/Transportation</option>
                 <option value="">Fashion/Accessories</option>
                 <option value="">Electronics/Tech</option>
+                <option value="">Toys/Games</option>
                 <option value="">Household/Outdoors</option>
                 <option value="">Art/Music</option>
+                <option value="">Books/Comics</option>
+                <option value="">Shoes/Clothing</option>
                 <option value="">Collectables</option>
             </select>
             <button class="bttn">Search</button>
         </form>
     </div>
     <div id="fullSell">
-        <button class="bttn bttn-dark">Start Selling</button>
+        <button [routerLink]="['/auctions/new']" class="bttn bttn-dark">Start Selling</button>
         <button [routerLink]="['/register']" class="bttn bttn-clear">Free Registration</button>
         <p><a href="#"><i class="far fa-user"> My Profile</i></a></p>
         <p><a href="#"><i class="far fa-comments"> Contact Us</i></a></p>
@@ -36,9 +39,9 @@
     </div>
 </div>
 <div id="nav-bar-lower">
-    <button class="bttn bttn-green">Start Selling</button>
-    <p class="lines">Login</p>
-    <p class="lines">Register for free</p>
+    <button [routerLink]="['/auctions/new']" class="bttn bttn-green">Start Selling</button>
+    <p [routerLink]="['/login']" class="lines">Login</p>
+    <p [routerLink]="['/register']" class="lines">Register for free</p>
     <p class="lines">My Profile</p>
     <p class="lines">Contact us</p>
 
@@ -56,18 +59,21 @@
             <li><a href="#">Start Selling</a></li>
             <li id="footerCatsHov">Browse Categories <i class="fas fa-caret-down"></i>
                 <ul id="footerCats">
-                    <li><a href="#">Cars/Bicycles</a></li>
+                    <li><a href="#">Autos/Transportation</a></li>
                     <li><a href="#">Fashion/Accessories</a></li>
                     <li><a href="#">Electronics/Tech</a></li>
+                    <li><a href="#">Toys/Games</a></li>
+                    <li><a href="#">Household/Outdoors</a></li>
                     <li><a href="#">Art/Music</a></li>
+                    <li><a href="#">Books/Comics</a></li>
+                    <li><a href="#">Shoes/Clothing</a></li>
                     <li><a href="#">Collectables</a></li>
                 </ul>
-                
+
             </li>
-            <li><a href="#">Register Free Account</a></li>
+            <li><a [routerLink]="['/register']">Register Free Account</a></li>
             <li><a href="#">View Profile</a></li>
             <li><a href="#">Contact Us</a></li>
-            <li><a href="#"></a></li>
         </ul>
 
     </div>
