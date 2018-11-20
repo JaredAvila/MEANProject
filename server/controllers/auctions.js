@@ -137,7 +137,7 @@ module.exports = {
         })
     },
     nukeAuctionById: (req, res) => {
-        Auction.deleteOne({_id: req.params.auctionId}, (err) => {
+        Auction.deleteOne({_id: req.body.auctionId}, (err) => {
             if (err) {
                 console.log(err)
                 res.json({status: false, message: "Delete Auction", data: err})

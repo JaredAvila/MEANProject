@@ -1,6 +1,7 @@
 const users = require('../controllers/users')
 const auctions = require('../controllers/auctions')
 const categories = require('../controllers/categories')
+const bids = require('../controllers/bids')
 const path = require('path')
 
 module.exports = function(app) {
@@ -60,6 +61,23 @@ module.exports = function(app) {
     })
     app.delete('/api/categories/delete/:id', (req, res) => {
         categories.nukeCategoryById(req, res)
+    })
+
+    // Bid Routes
+    app.get('/api/bids/all', (req, res) => {
+        bids.getAllBids(req, res)
+    })
+    app.get('/api/bids/auction/:auctionId', (req, res) => {
+        bids.getAllBidsByAuctionId(req, res)
+    })
+    app.get('/api/bids/user', (req, res) => {
+        bids.getAllBidsByUserId(req, res) // Bid History
+    })
+    app.post('/api/bids/new', (req, res) => {
+        bids.createBid(req, res)
+    })
+    app.delete('/api/bids/delete', (req, res) => {
+        bids.nukeBidById(req, res)
     })
 
     app.all("*", (req, res, next) => {

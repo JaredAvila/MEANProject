@@ -37,3 +37,9 @@
 h1#newAct span{
   color:#00aeff;
 }
+
+@media only screen and (max-width: 480px){
+  .formStyle{
+    flex-direction: column;
+  }
+}
