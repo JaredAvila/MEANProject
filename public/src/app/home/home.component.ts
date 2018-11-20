@@ -63,4 +63,11 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+  getAuctionsByCategoryName(categoryName) {
+    let obs = this._httpService.getAuctionsByCategoryName(categoryName)
+    obs.subscribe(res => {
+      console.log(res);
+      this.auctions = res['data']['auctions'];
+    })
+  }
 }

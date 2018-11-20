@@ -64,4 +64,8 @@ export class HttpService {
   getCategoryByAuctionId(auctionId: string) {
     return this._http.get('/api/categories/name/'+ auctionId)
   }
+
+  getAuctionsByCategoryName(categoryName) {
+    return this._http.get('/api/categories/'+ categoryName)
+  }
 }
