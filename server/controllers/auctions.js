@@ -17,7 +17,7 @@ module.exports = {
     },
     // get all auctions in a category
     getAuctionByCategory: (req, res) => {
-        Category.find({_id: req.params.category_name}, (err, category) => {
+        Category.findOne({_id: req.params.category_name}, (err, category) => {
             if (err) {
                 console.log(err)
                 res.json({status: false, message: "Get Auctions By Category", data: err})
@@ -29,7 +29,7 @@ module.exports = {
     },
     // get an auction by it id
     getAuctionById: (req, res) => {
-        Auction.find({_id: req.params.id}, (err, auction) => {
+        Auction.findOne({_id: req.params.id}, (err, auction) => {
             if (err) {
                 console.log(err)
                 res.json({status: false, message: "Get Auction By Id", data: err})
