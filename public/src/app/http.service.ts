@@ -58,9 +58,9 @@ export class HttpService {
   createDefaultCategories(category: object) {
     return this._http.post('/api/createCategories', category)
   }
-  getCategoryByName(name: string) {
-    return this._http.get('/api/categories/'+ name)
-  }
+  // getCategoryByName(name: string) {
+  //   return this._http.get('/api/categories/'+ name)
+  // }
   getCategoryByAuctionId(auctionId: string) {
     return this._http.get('/api/categories/name/'+ auctionId)
   }
