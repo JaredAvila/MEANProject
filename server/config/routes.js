@@ -50,8 +50,11 @@ module.exports = function(app) {
     app.get('/api/categories/all', (req, res) => {
         categories.getAllCategories(req, res)
     })
-    app.get('/api/categories/:id', (req, res) => {
-        categories.getCategoryById(req, res)
+    app.get('/api/categories/:categoryName', (req, res) => {
+        categories.getCategoryByName(req, res)
+    })
+    app.get('/api/categories/name/:auctionId', (req, res) => {
+        categories.getCategoryByAuctionId(req, res)
     })
     app.post('/api/categories/new', (req, res) => {
         categories.createCategory(req, res)
@@ -78,6 +81,11 @@ module.exports = function(app) {
     })
     app.delete('/api/bids/delete', (req, res) => {
         bids.nukeBidById(req, res)
+    })
+
+    // MISC
+    app.post('/api/createCategories', (req, res) => {
+        categories.defaultCategories(req, res)
     })
 
     app.all("*", (req, res, next) => {

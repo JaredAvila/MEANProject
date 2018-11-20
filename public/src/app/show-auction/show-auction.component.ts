@@ -11,6 +11,7 @@ export class ShowAuctionComponent implements OnInit {
   @Input() auctionId: string;
   auction: object;
   newBid: object;
+  similarAuctions: Array<object> = [];
 
   constructor(
     private _httpService: HttpService,
@@ -38,7 +39,24 @@ export class ShowAuctionComponent implements OnInit {
         console.log(res['errors']);
       } else {
         this.auction = res['data'];
+        this.getCategoryByAuctionId(this.auction['_id']);
       }
+    })
+  }
+
+  getCategoryByAuctionId(auctionId) {
+    let obs = this._httpService.getCategoryByAuctionId(auctionId)
+    obs.subscribe(res => {
+      console.log(res);
+      this.getSimilarAuctions(res['name']);
+    })
+  }
+
+  getSimilarAuctions(name) {
+    let obs = this._httpService.getCategoryByName(name);
+    obs.subscribe(res => {
+      this.similarAuctions = res['data']['auctions'].slice(0,6);
+      console.log(this.similarAuctions);
     })
   }
 

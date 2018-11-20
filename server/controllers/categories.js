@@ -13,8 +13,19 @@ module.exports = {
             }
         })
     },
-    getCategoryById: (req, res) => {
-        Category.find({_id: req.params.id}, (err, category) => {
+    getCategoryByName: (req, res) => {
+        Category.findOne({name: req.params.categoryName}, (err, category) => {
+            if (err) {
+                console.log(err)
+                res.json({status: false, message: "Get Category By Id", data: err})
+            } else {
+                console.log(category)
+                res.json({status: true, message: "Get Category By Id", data: category})
+            }
+        })
+    },
+    getCategoryByAuctionId: (req, res) => {
+        Category.findOne({"auctions._id": req.params.auctionId}, (err, category) => {
             if (err) {
                 console.log(err)
                 res.json({status: false, message: "Get Category By Id", data: err})
@@ -56,4 +67,17 @@ module.exports = {
             }
         })
     },
+    defaultCategories: (req, res) => {
+        console.log(req.body.name);
+        
+        Category.update({name: req.body.name}, {$set: {name: req.body.name}}, {upsert: true}, (err, cat) => {
+            if (err) {
+                console.log(err)
+                res.json({status: false, message: "Creates Default Category", data: err})
+            } else {
+                console.log("Create categories")
+                res.json({status: true, message: "Creates Default Category", data: cat})
+            }
+        })
+    } 
 }

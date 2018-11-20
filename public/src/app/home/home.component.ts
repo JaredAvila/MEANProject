@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,8 +9,9 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
   items: Array<any> = []
-  constructor() {
-    
+  auctions: Array<object> = []
+  
+  constructor(private _httpService: HttpService) {
   }
   
   ngOnInit() {
@@ -39,6 +41,18 @@ export class HomeComponent implements OnInit {
       { name: 'assets/img/prod6.jpeg' },
       { name: 'assets/img/prod7.jpeg' }
     ]
+  this.getAllAuctions();
   }
-  
+
+  getAllAuctions() {
+    let obs = this._httpService.getAllAuctions()
+    obs.subscribe(res => {
+      if (res['errors']) {
+        console.log("error");
+      } else {
+        this.auctions = res['data'];
+        console.log(this.auctions)
+      }
+    })
+  }
 }
