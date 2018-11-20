@@ -3,6 +3,7 @@ import { Router, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { Subscription } from "rxjs";
 import * as $ from "jquery";
+import { HttpService } from "../http.service";
 
 @Component({
   selector: "app-home",
@@ -10,8 +11,10 @@ import * as $ from "jquery";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
+  constructor(private router: Router, private _httpService: HttpService) {}
+
   items: Array<any> = [];
-  constructor(private router: Router) {}
+  auctions: Array<object> = [];
 
   ngOnInit() {
     //--------Causes auto-scroll to top of page upon loading of new component.------------------------------
@@ -46,5 +49,18 @@ export class HomeComponent implements OnInit {
       { name: "assets/img/prod6.jpeg" },
       { name: "assets/img/prod7.jpeg" }
     ];
+    this.getAllAuctions();
+  }
+
+  getAllAuctions() {
+    let obs = this._httpService.getAllAuctions();
+    obs.subscribe(res => {
+      if (res["errors"]) {
+        console.log("error");
+      } else {
+        this.auctions = res["data"];
+        console.log(this.auctions);
+      }
+    });
   }
 }
