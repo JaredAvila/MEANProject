@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   constructor() { }
   title = 'Look jQuery Animation working in action!';
   ngOnInit() {
+ 
     //-----------------jQuery--------------------------------------------------
     $('document').ready(function () {
       $("#SearchIcon").on('click', function () {

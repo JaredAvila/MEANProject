@@ -1,0 +1,60 @@
+#wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+#rightSide {
+    padding: 20px;
+    background-color: gray;
+    height: 100%;
+    text-align: center;
+}
+
+#rightSide img {
+    height: 350px;
+    /* width: 350px; */
+    box-shadow: 4px 4px 10px black;
+    margin: 10px;
+}
+
+#rightSide h2 {
+    color: white;
+    letter-spacing: 8px;
+    padding: 10px;
+}
+
+#currentInfo h3 {
+    border-bottom: 2px solid black;
+    width: 70%;
+    margin: auto;
+}
+
+#currentInfo h1 {
+    padding: 20px;
+    color: rgb(19, 75, 38);
+}
+
+#currentInfo h1#timeer {
+    font-size: 36pt;
+    color: rgb(6, 146, 228);
+    text-shadow: 0px 0px 4px black;
+}
+
+#currentInfo {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+}
+
+span#highBid {
+    color: rgb(6, 146, 228);
+    text-shadow: 0px 0px 4px black;
+    letter-spacing: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+    #wrap {
+        flex-direction: column-reverse;
+    }
+}

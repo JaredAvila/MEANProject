@@ -1,5 +1,38 @@
-<p>
-  {{ auction | json}}
-</p>
+<div id="wrap">
+  <div id="leftSide"><router-outlet></router-outlet></div>
 
-<button (click)="createBid()">TEMPORARY</button>
+  <!-- <button (click)="createBid()">TEMPORARY</button> -->
+  <div id="rightSide">
+    <!--
+      ---------------------------  ITEM IMAGE URL goes here and name goes below it  ---------------------------
+    -->
+
+    <h2>Toddler Toys (Like NEW!!!)</h2>
+    <div id="currentInfo">
+      <!--
+        ---------------------------  Highest BIDDER NAME goes here   ---------------------------
+      -->
+      <h3>Current High Bidder: <span id="highBid">Justin</span></h3>
+      <!--
+        ---------------------------  CURRENT HIGHEST BID emit with Socket  ---------------------------
+      -->
+      <h1>$25.00</h1>
+      <h3>Time Left:</h3>
+      <!--
+        ---------------------------  REMAINING TIME in auction  ---------------------------
+      -->
+      <h1 id="timeer">2 d. 1 hr. 4 min. 32 s.</h1>
+    </div>
+    <form>
+      <!--
+        ---------------------------  MIN and VALUE should be set to (CURRENT BID + 1)  ---------------------------
+      -->
+      <input class="inputs" type="number" min="26" value="26" />
+      <button class="bttn bttn-ltBlue">1-Up</button>
+    </form>
+    <img
+      src="https://zdnet2.cbsistatic.com/hub/i/r/2017/07/18/071068d1-e257-4abf-811d-48a626f621f7/resize/770xauto/72e298cc964f48604e0edb0a3ee72339/bear.jpg"
+      alt=""
+    />
+  </div>
+</div>

@@ -1,0 +1,43 @@
+#wrap {
+    display: flex;
+    flex-direction: column;
+    opacity: .9;
+}
+
+#categoriez {
+    display: flex;
+    background-color: rgb(37, 37, 37);
+    padding: 20px;
+}
+
+#listSide h2 {
+    color: white;
+    font-size: 26pt;
+    margin: 20px;
+    padding: 0 50px;
+}
+
+#categoriez ul li {
+    display: block;
+    padding: 5px;
+    font-size: 18pt;
+}
+
+#categoriez li a {
+    color: gray;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 3px;
+    transition: margin-left 300ms, border-radius 200ms, opacity 400ms, background-color 400ms, color 200ms;
+}
+
+#categoriez li a:hover {
+    color: rgb(6, 146, 228);
+    margin-left: 15px;
+}
+
+#categoriez li:hover a {
+    background-color: rgb(97, 97, 97);
+    border-radius: 6px;
+    opacity: .5;
+}

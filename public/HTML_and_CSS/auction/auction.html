@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My 1-Up</title>
-    <link rel="stylesheet" href="auction.css">
-    <link rel="stylesheet" href="/public/src/styles.css">
+    <link rel="stylesheet" href="auction.css" />
+    <link rel="stylesheet" href="/Angular/MEAN_Proj/public/src/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="wrap">
-        <div id="categoriez">
-            <div id="listSide">
-                <h2>Categories</h2>
-                <ul>
-                    <li><a href="#">Autos/Transportation</a></li>
-                    <li><a href="#">Fashion/Accessories</a></li>
-                    <li><a href="#">Electronics/Tech</a></li>
-                    <li><a href="#">Toys/Games</a></li>
-                    <li><a href="#">Household/Outdoors</a></li>
-                    <li><a href="#">Art/Music</a></li>
-                    <li><a href="#">Books/Comics</a></li>
-                    <li><a href="#">Shoes/Clothing</a></li>
-                    <li><a href="#">Collectables</a></li>
-                </ul>
-            </div>
-            <div>
-                <button id="closeBtnSide" class="bttn-circle">X</button>
-            </div>
-        </div>
+      <!--
         <div>
             <button id="openBtnSide" class="bttn bttn-ltBlue">Browse Categories</button>
         </div>
@@ -43,82 +24,19 @@
                     indescriminately, stumpy. We thought it was better than 'Hodor'. One of a kind, rare rare rare!
                     SPEND MONEY!</p>
             </div>
-            <div id="similarItems">
-                <h2>Other <span id="theOthers">1-Uppers</span> also viewed...</h2>
-                
-                
-                <!------------------LOOP WITH SIMILAR AUCTIONS FROM SAME CATEGORY------------------------------------------->
-                <div class="cards">
-                    <img src="/public/src/assets/img/prod5.jpeg" alt="">
-                    <h3>Purdy Shoes</h3>
-                    <p>Current Bid: $12.00</p>
-                    <button class="bttn bttn-ltBlue">View</button>
-                </div>
-                
-                <!-----------------------------END LOOP----------------------------------------->
-
-
-            <!--------------------ERASE AFTER LOOPED DATA IS WORKING------------------------------>
-                        <div class="cards">
-                            <img src="/public/src/assets/img/prod3.jpeg" alt="">
-                            <h3>Purdy Shoes</h3>
-                            <p>Current Bid: $12.00</p>
-                            <button class="bttn bttn-ltBlue">View</button>
-                        </div>
-                        <div class="cards">
-                            <img src="/public/src/assets/img/prod7.jpeg" alt="">
-                            <h3>Purdy Shoes</h3>
-                            <p>Current Bid: $12.00</p>
-                            <button class="bttn bttn-ltBlue">View</button>
-                        </div>
-                        <div class="cards">
-                            <img src="/public/src/assets/img/prod1.jpeg" alt="">
-                            <h3>Purdy Shoes</h3>
-                            <p>Current Bid: $12.00</p>
-                            <button class="bttn bttn-ltBlue">View</button>
-                        </div>
-                        <div class="cards">
-                            <img src="/public/src/assets/img/prod6.jpeg" alt="">
-                            <h3>Purdy Shoes</h3>
-                            <p>Current Bid: $12.00</p>
-                            <button class="bttn bttn-ltBlue">View</button>
-                        </div>
-            <!--------------------------END ERASE------------------------------------------------------>
-            </div>
-
-        </div>
-        <div id="rightSide">
-            <!-----------------------------  ITEM IMAGE URL goes here and name goes below it  ----------------------------->
-            <img src="/public/src/assets/img/prod2.jpeg" alt="">
-            <h2>Dueling Minions</h2>
-            <div id="currentInfo">
-                <!-----------------------------  Highest BIDDER NAME goes here   ----------------------------->
-                <h3>Current High Bidder: <span id="highBid">Justin</span></h3>
-                <!-----------------------------  CURRENT HIGHEST BID emit with Socket  ----------------------------->
-                <h1>$25.00</h1>
-                <h3>Time Left:</h3>
-                <!-----------------------------  REMAINING TIME in auction  ----------------------------->
-                <h1 id="timeer">2 d. 1 hr. 4 min. 32 s. </h1>
-            </div>
-            <form>
-                <!-----------------------------  MIN and VALUE should be set to (CURRENT BID + 1)  ----------------------------->
-                <input class="inputs" type="number" min="26" value="26">
-                <button class="bttn bttn-ltBlue">1-Up</button>
-            </form>
-        </div>
+      -->
     </div>
     <script>
-        $('document').ready(function () {
-            $("#openBtnSide").on('click', function () {
-                $('#listSide').toggle(300);
-                $('#categoriez').toggle(300);
-            })
-            $("#closeBtnSide").on('click', function () {
-                $('#listSide').toggle(300);
-                $('#categoriez').toggle(300);
-            })
-        })
+      $("document").ready(function() {
+        $("#openBtnSide").on("click", function() {
+          $("#listSide").toggle(300);
+          $("#categoriez").toggle(300);
+        });
+        $("#closeBtnSide").on("click", function() {
+          $("#listSide").toggle(300);
+          $("#categoriez").toggle(300);
+        });
+      });
     </script>
-</body>
-
+  </body>
 </html>

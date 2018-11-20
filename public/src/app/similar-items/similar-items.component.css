@@ -1,0 +1,58 @@
+#wrap {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(19, 19, 19);
+    color: gray;
+    box-shadow: 0px 0px 10px black;
+    padding: 40px;
+    opacity: .9
+}
+
+span#theOthers {
+    color: rgb(6, 146, 228);
+    text-shadow: 0px 0px 4px black;
+}
+
+#itemDesc h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#itemDesc p {
+    padding: 10px 0;
+    line-height: 1.5;
+    font-size: 14pt;
+}
+
+#similarItems {
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+#similarItems img {
+    box-shadow: 4px 4px 8px black;
+    width: 250px;
+}
+
+.cards {
+    margin: 5px;
+}
+
+#bidHist {
+    padding: 10px;
+}
+
+#bidHist h4 {
+    color: rgb(6, 146, 228);
+}
+
+li p {
+    padding: 5px;
+}
+
+ul li {
+    list-style-type: circle;
+}

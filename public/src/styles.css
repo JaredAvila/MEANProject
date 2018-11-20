@@ -1,112 +1,113 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-html{
+html {
     width: 100%;
 }
 
-#wrap h1,#wrap  h2,#wrap  h3,#wrap  h4,#wrap  h5,#wrap  h6{
+#wrap h1, #wrap h2, #wrap h3, #wrap h4, #wrap h5, #wrap h6 {
     cursor: default;
     font-family: 'Ubuntu', sans-serif;
 }
 
-body{
+body {
     background-image: linear-gradient(to bottom right, rgb(22, 22, 22), rgb(97, 97, 97));
     height: 100%;
     width: 100%;
 }
 
-.bttn{
+.bttn {
     padding: 10px;
     border-radius: 4px;
-    outline:none;
-    border:none;
+    outline: none;
+    border: none;
     font-size: 14pt;
     margin: 5px;
     cursor: pointer;
 }
 
-.bttn:hover{
+.bttn:hover {
     background-color: rgb(165, 165, 165);
 }
 
-.bttn:active{
+.bttn:active {
     background-color: rgb(110, 110, 110);
 }
 
-.bttn-ltBlue{
+.bttn-ltBlue {
     background-color: rgb(0, 174, 255);
     color: rgb(34, 34, 34);
 }
 
-.bttn-ltBlue:hover{
+.bttn-ltBlue:hover {
     background-color: rgb(2, 147, 214);
 }
 
-.bttn-ltBlue:active{
+.bttn-ltBlue:active {
     background-color: rgb(3, 125, 182);
 }
 
-.bttn-green{
+.bttn-green {
     background-color: rgb(0, 255, 106);
     color: rgb(34, 34, 34);
 }
 
-.bttn-green:hover{
+.bttn-green:hover {
     background-color: rgb(3, 211, 89);
 }
 
-.bttn-green:active{
+.bttn-green:active {
     background-color: rgb(0, 163, 68);
 }
-.bttn-dark{
+
+.bttn-dark {
     background-color: rgb(87, 87, 87);
     color: white;
 }
 
-.bttn-dark:hover{
+.bttn-dark:hover {
     background-color: rgb(73, 73, 73);
 }
 
-.bttn-dark:active{
+.bttn-dark:active {
     background-color: rgb(37, 37, 37);
 }
 
-.bttn-clear{
+.bttn-clear {
     background: transparent;
 }
 
-.bttn-clear:hover{
+.bttn-clear:hover {
     background-color: rgb(230, 230, 230);
     opacity: .2;
 }
 
-.bttn-clear:active{
+.bttn-clear:active {
     background-color: rgb(37, 37, 37);
 }
 
-.bttn-circle{
+.bttn-circle {
     border-radius: 50%;
     padding: 10px 12px;
-    outline:none;
+    outline: none;
 }
 
-.inputs{
+.inputs {
     padding: 10px;
     border-radius: 6px;
     border: none;
     outline: none;
 }
 
+@media only screen and (max-width: 480px) {}
 
+@media only screen and (min-width: 481px) {}
 
-@media only screen and (max-width: 480px){}
-@media only screen and (min-width: 481px){}
-@media only screen and (min-width: 1000px){
-    body{
+@media only screen and (min-width: 1000px) {
+    body {
         background: url(./assets/img/carbon-carbon-fiber-dark-596815.jpg);
     }
 }
