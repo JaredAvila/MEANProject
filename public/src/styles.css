@@ -88,6 +88,12 @@ body{
     background-color: rgb(37, 37, 37);
 }
 
+.bttn-circle{
+    border-radius: 50%;
+    padding: 10px 12px;
+    outline:none;
+}
+
 .inputs{
     padding: 10px;
     border-radius: 6px;

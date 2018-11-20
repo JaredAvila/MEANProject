@@ -76,6 +76,11 @@
     cursor: pointer;
 }
 
+#nav-bar-lower p a{
+    color: black;
+    text-decoration: none;
+}
+
 .lines {
     display: block;
     color: #000;
