@@ -45,4 +45,12 @@ export class HttpService {
   nukeAuctionById(auctionId: string, categoryId: string) {
     return this._http.delete('/api/auctions/delete/'+ auctionId +'/:categoryId' + categoryId)
   }
+
+  // BID ROUTES
+  getAllBidsByAuction(auctionId: string) {
+    return this._http.get('/api/bids/auction/' + auctionId)
+  }
+  createBid(newBid: object) {
+    return this._http.post('/api/bids/new', newBid)
+  }
 }

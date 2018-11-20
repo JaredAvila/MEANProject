@@ -41,6 +41,7 @@ module.exports = {
         )
     },
     createBid: (req, res) => {
+        console.log("==========", req.body);
         Bid.create(req.body, (err, bid) => {
             if (err) {
                 console.log(err);

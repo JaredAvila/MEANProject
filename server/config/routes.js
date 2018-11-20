@@ -70,9 +70,8 @@ module.exports = function(app) {
     app.get('/api/bids/auction/:auctionId', (req, res) => {
         bids.getAllBidsByAuctionId(req, res)
     })
-    // bid history
     app.get('/api/bids/user', (req, res) => {
-        bids.getAllBidsByUserId(req, res)
+        bids.getAllBidsByUserId(req, res) // Bid History
     })
     app.post('/api/bids/new', (req, res) => {
         bids.createBid(req, res)
