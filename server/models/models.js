@@ -10,6 +10,11 @@ module.exports = function() {
         })
     ]
 
+    var bidSchema = new mongoose.Schema({
+        bidder_id: { type: String, required: [true, 'Bidder id cannot be blank'] },
+        amount: { type: Number, required: [true, 'Amount cannot be blank'] },
+    }, {timestamps: true });
+
     var auctionSchema = new mongoose.Schema({
         item_name: {type: String, required: [true, 'Title cannot be blank'] },
         description: {type: String, required: [true, 'Description cannot be blank'] },
@@ -17,6 +22,7 @@ module.exports = function() {
         starting_bid: {type: Number, required: [true, 'Starting bid cannot be blank'] },
         start_date: {type: Date, required: [true, 'Start date cannot be blank'] },
         duration: {type: String, required: [true, 'Duration cannot be blank'] },
+        bids: [bidSchema],
     }, {timestamps: true });
 
     var userSchema = new mongoose.Schema({
@@ -35,14 +41,15 @@ module.exports = function() {
         },
         wallet_balance: { type: Number },
         auctions_watched: [auctionSchema],
-        auctions_created: [auctionSchema]
+        auctions_created: [auctionSchema],
     }, {timestamps: true });
 
     var categorySchema = new mongoose.Schema({
         name: { type: String, required: [true, "Category name cannot be blank"] },
-        auctions: [auctionSchema]
+        auctions: [auctionSchema],
     })
 
+    mongoose.model('Bid', bidSchema);
     mongoose.model('Category', categorySchema);
     mongoose.model('Auction', auctionSchema);
     mongoose.model('User', userSchema);
