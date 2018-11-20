@@ -10,13 +10,14 @@ import * as $ from 'jquery';
 
 export class AppComponent implements OnInit {
   // title = 'Look jQuery Animation working in action!';
-  
+  userId: string;
+
   constructor(
     private _httpService: HttpService,
   ) { }
   
   ngOnInit() {
- 
+    this.userId = sessionStorage.getItem('userId')
     //-----------------jQuery--------------------------------------------------
     $('document').ready(function () {
       $("#SearchIcon").on('click', function () {
