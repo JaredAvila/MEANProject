@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { NewAuctionComponent } from './new-auction/new-auction.component';
+import { ShowAuctionComponent } from './show-auction/show-auction.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'auctions/new', component: NewAuctionComponent },
+  { path: 'auctions/:id', component: ShowAuctionComponent },
 ];
 
 @NgModule({
