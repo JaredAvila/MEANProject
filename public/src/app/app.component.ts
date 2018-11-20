@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from './http.service';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,8 +9,12 @@ import * as $ from 'jquery';
 })
 
 export class AppComponent implements OnInit {
-  constructor() { }
-  title = 'Look jQuery Animation working in action!';
+  // title = 'Look jQuery Animation working in action!';
+  
+  constructor(
+    private _httpService: HttpService,
+  ) { }
+  
   ngOnInit() {
     //-----------------jQuery--------------------------------------------------
     $('document').ready(function () {
@@ -28,7 +33,30 @@ export class AppComponent implements OnInit {
         $("#footerCats").toggle(200);
       })
     });
+    this.createDefaultCategories();
   }
+
+  createDefaultCategories() {
+    let categoryNames = [
+      'cars',
+      'accessories',
+      'tech',
+      'toysgames',
+      'house',
+      'artmusic',
+      'bookscomics',
+      'shoes',
+      'collect'
+    ]
+    console.log('Creating default categories..');
+    for (var name of categoryNames) {
+      let obs = this._httpService.createDefaultCategories({name: name});
+      obs.subscribe(res => {
+        // console.log(res);
+      })
+    }
+  }
+
   logoutUser() {
     sessionStorage.clear();
   }

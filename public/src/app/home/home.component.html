@@ -31,11 +31,11 @@
       </ng-template>
     </div>
     <div id="auctions">
-      <div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
+      <div *ngFor="let item of auctions" class="auction">
+        <img src="{{item.image}}"
           alt="">
         <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
+          <h3>{{item.item_name}}</h3>
           <p>Current bid:</p>
           <h2>$24.99</h2>
           <p>Time left:</p>
@@ -46,106 +46,6 @@
           <button class="bttn bttn-ltBlue">View Auction</button>
         </div>
       </div>
-      <div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div><div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div><div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div><div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div><div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div><div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div><div class="auction">
-        <img src="http://assets.kraftfoods.com/recipe_images/opendeploy/%20138280-49fdab4f7bf207b3cc31f72186c86b0a642f0802_642x428.jpg"
-          alt="">
-        <div id="cardInfo">
-          <h3>Kirk's Cake</h3>
-          <p>Current bid:</p>
-          <h2>$24.99</h2>
-          <p>Time left:</p>
-          <h2>12:31:09</h2>
-        </div>
-        <div id="cardBtns">
-          <button class="bttn bttn-green">Bid Now</button>
-          <button class="bttn bttn-ltBlue">View Auction</button>
-        </div>
-      </div>
-      
     </div>
   </div>
 </div>
