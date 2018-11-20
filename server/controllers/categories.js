@@ -28,10 +28,10 @@ module.exports = {
         Category.findOne({"auctions._id": req.params.auctionId}, (err, category) => {
             if (err) {
                 console.log(err)
-                res.json({status: false, message: "Get Category By Id", data: err})
+                res.json({status: false, message: "Get Category By Auction Id", data: err})
             } else {
                 console.log(category)
-                res.json({status: true, message: "Get Category By Id", data: category})
+                res.json({status: true, message: "Get Category By Auction Id", data: category})
             }
         })
     },

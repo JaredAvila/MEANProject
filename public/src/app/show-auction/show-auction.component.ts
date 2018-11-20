@@ -39,6 +39,8 @@ export class ShowAuctionComponent implements OnInit {
         console.log(res['errors']);
       } else {
         this.auction = res['data'];
+        console.log(this.auction);
+        console.log(this.auction['_id']);
         this.getCategoryByAuctionId(this.auction['_id']);
       }
     })
@@ -47,16 +49,9 @@ export class ShowAuctionComponent implements OnInit {
   getCategoryByAuctionId(auctionId) {
     let obs = this._httpService.getCategoryByAuctionId(auctionId)
     obs.subscribe(res => {
-      console.log(res);
-      this.getSimilarAuctions(res['name']);
-    })
-  }
-
-  getSimilarAuctions(name) {
-    let obs = this._httpService.getCategoryByName(name);
-    obs.subscribe(res => {
-      this.similarAuctions = res['data']['auctions'].slice(0,6);
-      console.log(this.similarAuctions);
+      console.log("category", res);
+      this.similarAuctions = res['data']['auctions'];
+      console.log("similar auctions", this.similarAuctions);
     })
   }
 
