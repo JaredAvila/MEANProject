@@ -20,7 +20,7 @@ export class HttpService {
     return this._http.post('/api/users/new', user)
   }
   updateUserById(id: string, user: object) {
-    return this._http.put('/api/users/update' + id, user)
+    return this._http.put('/api/users/update/' + id, user)
   }
   nukeUserById(userId: string, categoryId: string) {
     return this._http.delete('/api/users/delete/'+ userId +'/:categoryId' + categoryId)
