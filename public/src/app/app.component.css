@@ -76,7 +76,7 @@
     cursor: pointer;
 }
 
-#nav-bar-lower p a{
+#nav-bar-lower p a {
     color: black;
     text-decoration: none;
 }
@@ -101,72 +101,74 @@
     transition: width 1s;
 }
 
-#footer{
+#footer {
     background-color: rgb(26, 26, 26);
     display: flex;
 }
 
-.footerDivs{
+.footerDivs {
     margin: 10px;
     width: 20%;
     padding: 5px;
 }
 
-#footImg{
+#footImg {
     text-align: center;
 }
-#footImg img{
+
+#footImg img {
     height: 200px;
 }
 
-#accessLinks{
+#accessLinks {
     width: fit-content;
 }
 
-#accessLinks h4{
+#accessLinks h4 {
     color: gray;
     font-size: 20pt;
     margin-bottom: 30px;
 }
 
-#accessLinks ul li{
+#accessLinks ul li {
     display: block;
     margin: 5px 0;
 }
 
-#footerCatsHov{
+#footerCatsHov {
+    color: white;
     cursor: pointer;
 }
 
-#footerCatsHov:hover{
+#footerCatsHov:hover {
     color: gray;
 }
 
-#footerCats{
+#footerCats {
     display: none;
-    margin-left:20px;
+    margin-left: 20px;
 }
 
-.downloads{
+.downloads {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.downloads img{
+.downloads img {
     width: 100%;
 }
 
-.downloads H2{
+.downloads H2 {
     padding: 20px;
     margin-bottom: 50px;
 }
 
-.downloads span{
+.downloads span {
     color: rgb(0, 174, 255);
 }
 
-.downloads span.nums{
+.downloads span.nums {
     color: rgb(107, 107, 107);
 }
 
@@ -186,24 +188,22 @@
     #searchBar form input {
         border: 1px solid white
     }
-    #fullSell{
+    #fullSell {
         display: none;
     }
-    #footer{
+    #footer {
         flex-wrap: wrap;
     }
-
-    #nav-bar img{
+    #nav-bar img {
         display: none;
     }
-    #footImg{
+    #footImg {
         display: none;
     }
-
-    #footer{
+    #footer {
         flex-direction: column;
     }
-    .footerDivs{
+    .footerDivs {
         width: fit-content;
     }
 }
@@ -212,19 +212,19 @@
     #searchBar form input {
         border: 1px solid white
     }
-    #nav-bar img{
+    #nav-bar img {
         height: 80px;
     }
-    #fullSell{
+    #fullSell {
         display: none;
     }
-    #nav-bar-lower{
+    #nav-bar-lower {
         width: 50%;
     }
-    #footImg{
+    #footImg {
         display: none;
     }
-    #footer{
+    #footer {
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -238,32 +238,29 @@
         justify-content: space-between;
         background-color: rgb(0, 174, 255);
     }
-    #burgerMenu{
+    #burgerMenu {
         display: none;
     }
-    #fullSell{
+    #fullSell {
         display: flex;
         align-items: center;
     }
-
-    #fullSell p{
+    #fullSell p {
         margin: 5px 15px;
     }
-
-    #fullSell p a{
+    #fullSell p a {
         color: rgb(31, 31, 31);
     }
-    #fullSell p a:hover{
+    #fullSell p a:hover {
         color: rgb(156, 211, 255);
     }
-    #fullSell p a:active{
+    #fullSell p a:active {
         color: rgb(58, 84, 105);
     }
-    #footer{
+    #footer {
         padding: 100px;
     }
-    #footImg{
+    #footImg {
         display: block;
     }
-
 }
