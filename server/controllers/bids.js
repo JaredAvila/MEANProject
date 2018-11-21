@@ -49,7 +49,10 @@ module.exports = {
             } else {
                 Auction.findOneAndUpdate(
                     { _id: req.body.auction_id },
-                    { $push: {bids: req.body} },
+                    { $push: { bids: { 
+                        "$each": [bid], 
+                        "$position": 0 
+                    }}},
                     (err, auction) => {
                         if (err) {
                             console.log(err)
