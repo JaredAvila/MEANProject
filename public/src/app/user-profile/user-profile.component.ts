@@ -10,7 +10,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 export class UserProfileComponent implements OnInit {
   user : object
   profileToPass : object
-  // walletToPass : object
+  walletToPass : object
   auctionsWatchedToPass : object
   auctionsCreatedToPass : object
   userId: string;
@@ -46,7 +46,7 @@ export class UserProfileComponent implements OnInit {
 
   showProfile() {
     this.profileToPass = this.user;
-    // this.walletToPass = null;
+    this.walletToPass = null;
     this.auctionsWatchedToPass = null;
     this.auctionsCreatedToPass = null;
   }

@@ -17,16 +17,9 @@
       Name: {{ childShowProfile.first_name }} {{ childShowProfile.last_name }}
     </p>
     <p>Email: {{ childShowProfile.email }}</p>
-    <div id="wallet">
-      <app-show-wallet *ngIf="walletToPass" [childShowWallet]="walletToPass">
-      </app-show-wallet>
-      <h1 id="walletH1">My Wallet</h1>
-      <p>Current balance: <span id="greenTxt">$115</span></p>
-      <form id="walletForm">
-        <input class="inputs" placeholder="Add to wallet" />
-        <button class="bttn bttn-green">Add</button>
-      </form>
-    </div>
+
+    <app-show-wallet *ngIf="walletToPass" [childShowWallet]="walletToPass"></app-show-wallet>
+  
   </div>
   <div id="sideShow">
     <app-edit-profile

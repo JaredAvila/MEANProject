@@ -26,22 +26,16 @@ export class ShowProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.showWallet();
-    this.getId();
+    this.userId = sessionStorage.getItem("userId");
     this.user = {
       auctions_created: [],
       auctions_watched: []
     };
-    this.userId = sessionStorage.getItem("userId");
+    this.getUser();
   }
-  getId() {
-    this._route.params.subscribe(params => {
-      this.id = params["id"];
-      this.getUser(this.id);
-    });
-  }
-  getUser(id) {
-    let obs = this._httpService.getUserById(id);
+ 
+  getUser() {
+    let obs = this._httpService.getUserById(this.userId);
     obs.subscribe(res => {
       this.user = res["data"][0];
       this.profileToPass = this.user;
@@ -66,16 +60,16 @@ export class ShowProfileComponent implements OnInit {
   updateUserProfile($event) {
     this.updateUserProfileAfterEdit.emit(false);
   }
+
   showAuctionsWatched() {
     this.auctionsWatchedToPass = this.user;
     this.auctionsCreatedToPass = null;
     this.editToPass = null;
   }
+
   showAuctionsCreated() {
     this.auctionsWatchedToPass = null;
     this.auctionsCreatedToPass = this.user;
     this.editToPass = null;
   }
-  // showWallet() {
-  // }
 }

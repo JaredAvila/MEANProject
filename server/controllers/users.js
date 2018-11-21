@@ -69,10 +69,12 @@ module.exports = {
   },
   updateWalletById: (req, res) => {
     User.findOne(
-      { _id: req.params.id },
-      { runValidators: true },
+      { _id: req.body.id },
       (err, user) => {
-        user.wallet_balance += req.body.wallet_balance;
+
+        console.log(req.body)
+        console.log("==========================", user)
+        user.wallet_balance += parseInt(req.body.wallet_balance);
 
         user.save((err, newWalletBalance) => {
           if (err) {
