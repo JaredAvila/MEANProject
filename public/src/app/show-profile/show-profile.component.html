@@ -1,31 +1,28 @@
-<div id="wrap">
-  <h1>Jared's profile</h1>
-  <div id="userLinks">
-    <button (click)="editProfile()" class="bttn bttn-dark">
-      Edit Personal Info
-    </button>
-    <button (click)="showAuctionsCreated()" class="bttn bttn-dark">
-      My Auctions
-    </button>
-    <button (click)="showAuctionsWatched()" class="bttn bttn-dark">
-      Watched Auctions
-    </button>
-  </div>
-  <div id="userInfo">
-    <h1 id="walletH1">Personal Info</h1>
-    <p>
-      Name: {{ childShowProfile.first_name }} {{ childShowProfile.last_name }}
-    </p>
-    <p>Email: {{ childShowProfile.email }}</p>
-    <div id="wallet">
-      <app-show-wallet *ngIf="walletToPass" [childShowWallet]="walletToPass">
-      </app-show-wallet>
-      <h1 id="walletH1">My Wallet</h1>
-      <p>Current balance: <span id="greenTxt">$115</span></p>
-      <form id="walletForm">
-        <input class="inputs" placeholder="Add to wallet" />
-        <button class="bttn bttn-green">Add</button>
-      </form>
+<div id="profWrap">
+  <div id="wrap">
+    <h1>Jared's profile</h1>
+    <div id="userLinks">
+      <button (click)="editProfile()" class="bttn bttn-dark">
+        Edit Personal Info
+      </button>
+      <button (click)="showAuctionsCreated()" class="bttn bttn-dark">
+        My Auctions
+      </button>
+      <button (click)="showAuctionsWatched()" class="bttn bttn-dark">
+        Watched Auctions
+      </button>
+    </div>
+    <div id="userInfo">
+      <h1 id="walletH1">Personal Info</h1>
+      <p>
+        Name: {{ childShowProfile.first_name }} {{ childShowProfile.last_name }}
+      </p>
+      <p>Email: {{ childShowProfile.email }}</p>
+
+      <div id="wallet">
+        <app-show-wallet *ngIf="walletToPass" [childShowWallet]="walletToPass">
+        </app-show-wallet>
+      </div>
     </div>
   </div>
   <div id="sideShow">

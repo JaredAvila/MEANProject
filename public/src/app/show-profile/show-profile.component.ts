@@ -46,6 +46,7 @@ export class ShowProfileComponent implements OnInit {
       this.user = res["data"][0];
       this.profileToPass = this.user;
       this.walletToPass = this.user;
+      this.auctionsWatchedToPass = this.user;
     });
   }
 

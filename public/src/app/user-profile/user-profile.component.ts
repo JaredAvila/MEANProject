@@ -45,7 +45,6 @@ export class UserProfileComponent implements OnInit {
 
   showProfile() {
     this.profileToPass = this.user;
-    this.walletToPass = null;
     this.auctionsWatchedToPass = null;
     this.auctionsCreatedToPass = null;
   }

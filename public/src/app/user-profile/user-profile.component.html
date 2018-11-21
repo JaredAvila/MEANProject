@@ -1,26 +1,13 @@
-<div class="row ">
-  <div class="col-6">
-    <!--
-      <a class=" offset-6 col-4 mt-3 btn btn-warning" (click)="showProfile()"
-        >Profile</a
-      >
-      <a class=" offset-6 col-4 mt-3 btn btn-warning" (click)="showWallet()"
-        >Wallet</a
-      >
-    -->
-  </div>
-  <div class="mb-5 col-6">
-    <app-show-profile
-      *ngIf="profileToPass"
-      [childShowProfile]="profileToPass"
-      (updateUserProfileAfterEdit)="updateUserProfile($event)"
-    >
-    </app-show-profile>
-
-    <app-show-auctions-watched
-      *ngIf="auctionsWatchedToPass"
-      [childAuctionsWatched]="auctionsWatchedToPass"
-    >
-    </app-show-auctions-watched>
-  </div>
-</div>
+<app-show-profile
+  *ngIf="profileToPass"
+  [childShowProfile]="profileToPass"
+  (updateUserProfileAfterEdit)="updateUserProfile($event)"
+>
+</app-show-profile>
+<!--
+  <app-show-auctions-watched
+    *ngIf="auctionsWatchedToPass"
+    [childAuctionsWatched]="auctionsWatchedToPass"
+  >
+  </app-show-auctions-watched>
+-->
