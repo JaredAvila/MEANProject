@@ -29,12 +29,15 @@ export class RegistrationComponent implements OnInit {
   createUser() {
     let obs = this._httpService.createUser(this.newUser);
     obs.subscribe(res => {
+      console.log(res);
       if (res["data"]["errors"]) {
         this.errors = res["data"]["errors"];
         this.valid = true;
         this.cont = false;
         console.log(this.errors["email"].message);
       } else {
+        sessionStorage.setItem('userId', res['data']['_id']);
+        sessionStorage.setItem('userFirstName', res['data']['first_name']);
         this._router.navigate(["/home"]);
       }
     });
