@@ -144,9 +144,15 @@
     .auction:hover {
         -webkit-filter: brightness(100%);
         filter: brightness(100%);
-        transform: scale(1.1);
+        /* transform: scale(1.1); */
     }
     #carousel {
         display: block;
+    }
+    #items img {
+        width: 400px;
+    }
+    .items[_ngcontent-c1] img[_ngcontent-c1] {
+        width: 1000px;
     }
 }
