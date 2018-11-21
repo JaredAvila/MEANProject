@@ -10,8 +10,11 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class UserProfileComponent implements OnInit {
   id : string
   user : object
-  errors : object
-  editUser : object
+  profileToPass : object
+  walletToPass : object
+  auctionsWatchedToPass : object
+  auctionsCreatedToPass : object
+
 
   constructor(
     private _httpService: HttpService,
@@ -20,35 +23,60 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getUser()
+    this.getId()
     this.user = {
       auctions_created  : [],
       auctions_watched : []
     }
-    this.errors = {}
-    this.editUser = {} 
-
+    this.showProfile()
   }
-
-  getUser() {
-    this._route.params.subscribe((params: Params) => {
+  getId() {
+    this._route.params.subscribe((params) => {
       this.id = params['id'];
-      let obs = this._httpService.getUserById(this.id);
-      obs.subscribe(res => {
-        this.user = res['data'][0];
-      })
+      this.getUser(this.id);
     })
   }
 
-  updateUserById() {
-    let obs = this._httpService.updateUserById(this.id, this.editUser);
+  getUser(id) {
+    let obs = this._httpService.getUserById(id);
     obs.subscribe(res => {
-      if (res['data']['errors']) {
-        this.errors = res['data']['errors'];
-      } else {
-        this._router.navigate(['/user-profile', this.id])
-        this.getUser()
-      }
+      this.user = res['data'][0];
+      this.profileToPass = this.user
     })
   }
+
+  showProfile() {
+    this.profileToPass = this.user
+    this.walletToPass = null
+    this.auctionsWatchedToPass = null
+    this.auctionsCreatedToPass = null
+    // this.getUser(this.id)
+  }
+
+  showWallet() {
+    this.profileToPass = null
+    this.walletToPass = this.user
+    this.auctionsWatchedToPass = null
+    this.auctionsCreatedToPass = null
+  }
+
+
+  showAuctionsWatched() {
+    this.profileToPass = null
+    this.walletToPass = null
+    this.auctionsWatchedToPass = this.user
+    this.auctionsCreatedToPass = null
+  }
+
+  showAuctionsCreated() {
+    this.profileToPass = null
+    this.walletToPass = null
+    this.auctionsWatchedToPass = null
+    this.auctionsCreatedToPass = this.user
+  }
+
+  updateUserProfile($event){
+    this.getUser(this.id)
+  }
+
 }
