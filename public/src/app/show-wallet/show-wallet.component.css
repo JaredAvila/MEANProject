@@ -38,3 +38,7 @@ span#greenTxt {
     margin-bottom: 10px;
   }
 }
+
+form input {
+  color: black;
+}
