@@ -4,7 +4,7 @@
     <app-auction-menu *ngIf="isMenuVisible" (anEventEmitter)="dataFromChild($event)"></app-auction-menu>
   </div>
   <div id="rightSide">
-    <h2>{{auction.item_name}}</h2>
+    <h2>{{auction.item_name | titlecase}}</h2>
     <div id="currentInfo">
       <h3>Current High Bidder: <span id="highBid">{{auction.bids[0].bidder_name | titlecase }}</span></h3>
       <h1>{{auction.bids[0].amount | currency: 'USD'}}</h1>
