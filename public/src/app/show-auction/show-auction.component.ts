@@ -59,7 +59,7 @@ export class ShowAuctionComponent implements OnInit {
   createBid() {
     console.log("New bid: ", this.newBid);
 
-    if (this.newBid > this.auction['bids'][0]['amount']) {
+    if (this.newBid['amount'] > this.auction['bids'][0]['amount']) {
       this.lowBidError = false;
       let obs = this._httpService.createBid(this.newBid);
       obs.subscribe(res => {

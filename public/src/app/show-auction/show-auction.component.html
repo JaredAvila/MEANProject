@@ -6,8 +6,8 @@
   <div id="rightSide">
     <h2>{{auction.item_name}}</h2>
     <div id="currentInfo">
-      <h3>Current High Bidder: <span id="highBid">Justin</span></h3>
-      <h1>$25.00</h1>
+      <h3>Current High Bidder: <span id="highBid">{{auction.bids[0].bidder_name | titlecase }}</span></h3>
+      <h1>{{auction.bids[0].amount | currency: 'USD'}}</h1>
       <h3>Time Left:</h3>
       <h1 id="timeer"><countdown [config]="{leftTime: 1000 * 10}">$!m!:$!s!</countdown></h1>
     </div>

@@ -35,9 +35,9 @@ import { ShowAuctionsCreatedComponent } from './show-auctions-created/show-aucti
     ShowAuctionComponent,
     SimilarItemsComponent,
     AuctionMenuComponent,
+    ShowProfileComponent,
     UserProfileComponent,
     EditProfileComponent,
-    ShowProfileComponent,
     ShowWalletComponent,
     ShowAuctionsWatchedComponent,
     ShowAuctionsCreatedComponent
