@@ -72,4 +72,7 @@ export class ShowAuctionComponent implements OnInit {
   dataFromChild(eventData) {
     this.isMenuVisible = eventData;
   }
+
+
+  
 }

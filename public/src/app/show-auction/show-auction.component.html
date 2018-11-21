@@ -9,7 +9,7 @@
       <h3>Current High Bidder: <span id="highBid">Justin</span></h3>
       <h1>$25.00</h1>
       <h3>Time Left:</h3>
-      <h1 id="timeer">2 d. 1 hr. 4 min. 32 s.</h1>
+      <h1 id="timeer"><countdown [config]="{leftTime: 1000 * 10}">$!m!:$!s!</countdown></h1>
     </div>
     <form (submit)="createBid()">
       <input class="inputs" type="number" name="amount" [(ngModel)]="newBid.amount" />
