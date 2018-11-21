@@ -8,11 +8,12 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
   styleUrls: ["./user-profile.component.css"]
 })
 export class UserProfileComponent implements OnInit {
-  id: string;
-  user: object;
-  profileToPass: object;
-  auctionsWatchedToPass: object;
-  auctionsCreatedToPass: object;
+  user : object
+  profileToPass : object
+  // walletToPass : object
+  auctionsWatchedToPass : object
+  auctionsCreatedToPass : object
+  userId: string;
 
   constructor(
     private _httpService: HttpService,
@@ -21,22 +22,22 @@ export class UserProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getId();
-    this.user = {
-      auctions_created: [],
-      auctions_watched: []
-    };
-    this.showProfile();
+    this.userId = sessionStorage.getItem('userId')
+    if(this.userId){
+      this.user = {
+        auctions_created  : [],
+        auctions_watched : []
+      }
+      this.showProfile()
+      this.getUser()
+    } else {
+      this._router.navigate(['/login'])
+    }
+    
   }
-  getId() {
-    this._route.params.subscribe(params => {
-      this.id = params["id"];
-      this.getUser(this.id);
-    });
-  }
-
-  getUser(id) {
-    let obs = this._httpService.getUserById(id);
+ 
+  getUser() {
+    let obs = this._httpService.getUserById(this.userId);
     obs.subscribe(res => {
       this.user = res["data"][0];
       this.profileToPass = this.user;
@@ -45,12 +46,12 @@ export class UserProfileComponent implements OnInit {
 
   showProfile() {
     this.profileToPass = this.user;
-    this.walletToPass = null;
+    // this.walletToPass = null;
     this.auctionsWatchedToPass = null;
     this.auctionsCreatedToPass = null;
   }
 
   updateUserProfile($event) {
-    this.getUser(this.id);
+    this.getUser();
   }
 }

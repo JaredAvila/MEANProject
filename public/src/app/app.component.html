@@ -30,11 +30,15 @@
       Free Registration
     </button>
 
+    <!-- <p *ngIf='userId === 0'>
+      <a [routerLink]="['/login']"><i class="far fa-user"> My Profile</i></a>
+    </p> -->
+
+    <!-- <p *ngIf='userId'> -->
     <p>
-      <a [routerLink]="['/user-profile', userId]"
-        ><i class="far fa-user"> My Profile</i></a
-      >
+      <a [routerLink]="['/user-profile']"><i class="far fa-user"> My Profile</i></a>
     </p>
+
     <p>
       <a href="#"><i class="far fa-comments"> Contact Us</i></a>
     </p>
