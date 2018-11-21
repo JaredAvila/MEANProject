@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from '../http.service'
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-similar-items',
@@ -10,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SimilarItemsComponent implements OnInit {
   @Input() auction: object;
   @Input() similarAuctions: Array<object> = [];
-  toggleComponent: boolean = true;
+  @Output() anEventEmitter = new EventEmitter();
 
   constructor(
     private _httpService: HttpService,
@@ -27,7 +26,7 @@ export class SimilarItemsComponent implements OnInit {
     })
   }
 
-  toggleForm() {
-    this.toggleComponent = !this.toggleComponent;
+  openMenu() {
+    this.anEventEmitter.emit(true);
   }
 }

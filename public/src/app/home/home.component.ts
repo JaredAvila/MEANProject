@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Router, NavigationEnd } from "@angular/router";
+import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { filter } from "rxjs/operators";
-import { Subscription } from "rxjs";
 import * as $ from "jquery";
 import { HttpService } from "../http.service";
 
@@ -11,7 +10,10 @@ import { HttpService } from "../http.service";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router, private _httpService: HttpService) {}
+  constructor(
+    private router: Router, 
+    private _route: ActivatedRoute,
+    private _httpService: HttpService) {}
 
   items: Array<any> = [];
   auctions: Array<object> = [];
@@ -49,7 +51,20 @@ export class HomeComponent implements OnInit {
       { name: "assets/img/prod6.jpeg" },
       { name: "assets/img/prod7.jpeg" }
     ];
-    this.getAllAuctions();
+    // this.getAllAuctions();
+    this.getIdFromUrl();
+  }
+  
+  getIdFromUrl() {
+    this._route.params.subscribe(params => {
+      if (params['categoryName']) {
+        this.getAuctionsByCategoryName(params['categoryName']);
+        console.log("INIT", params['categoryName']);
+        
+      } else {
+        this.getAllAuctions();
+      }
+    })
   }
 
   getAllAuctions() {

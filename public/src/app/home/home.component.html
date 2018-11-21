@@ -2,15 +2,15 @@
   <div id="side">
     <h2 id="catClick">Categories</h2>
     <ul>
-      <li><a (click)="getAuctionsByCategoryName('cars')">Automobiles/Transportations</a></li>
-      <li><a (click)="getAuctionsByCategoryName('accessories')">Fashion/Accessories</a></li>
-      <li><a (click)="getAuctionsByCategoryName('tech')">Electronics/Tech</a></li>
-      <li><a (click)="getAuctionsByCategoryName('toysgames')">Toys/Games</a></li>
-      <li><a (click)="getAuctionsByCategoryName('house')">Household/Outdoors</a></li>
-      <li><a (click)="getAuctionsByCategoryName('artmusic')">Art/Music</a></li>
-      <li><a (click)="getAuctionsByCategoryName('bookscomics')">Books/Comics</a></li>
-      <li><a (click)="getAuctionsByCategoryName('shoes')">Shoes/Clothing</a></li>
-      <li><a (click)="getAuctionsByCategoryName('collect')">Collectables</a></li>
+      <li><a [routerLink]="['/home', 'cars']">Automobiles/Transportations</a></li>
+      <li><a [routerLink]="['/home', 'accessories']">Fashion/Accessories</a></li>
+      <li><a [routerLink]="['/home', 'tech']">Electronics/Tech</a></li>
+      <li><a [routerLink]="['/home', 'toysgames']">Toys/Games</a></li>
+      <li><a [routerLink]="['/home', 'house']">Household/Outdoors</a></li>
+      <li><a [routerLink]="['/home', 'artmusic']">Art/Music</a></li>
+      <li><a [routerLink]="['/home', 'bookscomics']">Books/Comics</a></li>
+      <li><a [routerLink]="['/home', 'shoes']">Shoes/Clothing</a></li>
+      <li><a [routerLink]="['/home', 'collect']">Collectables</a></li>
     </ul>
     <button class="bttn bttn-ltBlue" id="hideBtn">Close</button>
   </div>

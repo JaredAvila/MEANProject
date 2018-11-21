@@ -1,24 +1,20 @@
 <div id="wrap">
-  <button
-    class="bttn bttn-dark"
-    [routerLink]="['/auctions/34']"
-    routerLinkActive="router-link-active"
-  >
+  <button class="bttn bttn-dark" (click)="openMenu()" routerLinkActive="router-link-active">
     Back
   </button>
   <div id="categoriez">
     <div id="listSide">
       <h2>Categories</h2>
       <ul>
-        <li><a href="#">Autos/Transportation</a></li>
-        <li><a href="#">Fashion/Accessories</a></li>
-        <li><a href="#">Electronics/Tech</a></li>
-        <li><a href="#">Toys/Games</a></li>
-        <li><a href="#">Household/Outdoors</a></li>
-        <li><a href="#">Art/Music</a></li>
-        <li><a href="#">Books/Comics</a></li>
-        <li><a href="#">Shoes/Clothing</a></li>
-        <li><a href="#">Collectables</a></li>
+        <li><a [routerLink]="['/home', 'cars']">Automobiles/Transportations</a></li>
+        <li><a [routerLink]="['/home', 'accessories']">Fashion/Accessories</a></li>
+        <li><a [routerLink]="['/home', 'tech']">Electronics/Tech</a></li>
+        <li><a [routerLink]="['/home', 'toysgames']">Toys/Games</a></li>
+        <li><a [routerLink]="['/home', 'house']">Household/Outdoors</a></li>
+        <li><a [routerLink]="['/home', 'artmusic']">Art/Music</a></li>
+        <li><a [routerLink]="['/home', 'bookscomics']">Books/Comics</a></li>
+        <li><a [routerLink]="['/home', 'shoes']">Shoes/Clothing</a></li>
+        <li><a [routerLink]="['/home', 'collect']">Collectables</a></li>
       </ul>
     </div>
   </div>

@@ -6,7 +6,7 @@
       <li *ngFor="let bid of this.auction.bids"><p>{{bid.name}} - ${{bid.amount}} - {{bid.createdAt}}</p></li>
     </ul>
   </div>
-  <button class="bttn bttn-ltBlue" (click)="toggleForm()">
+  <button class="bttn bttn-ltBlue" (click)="openMenu($event)">
     Browse other Categories
   </button>
   <h2>Other <span id="theOthers">1-Uppers</span> also viewed...</h2>

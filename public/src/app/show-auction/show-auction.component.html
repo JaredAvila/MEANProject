@@ -1,7 +1,7 @@
 <div id="wrap">
   <div id="leftSide">
-    <app-similar-items [auction]="auction" [similarAuctions]="similarAuctions"></app-similar-items>
-    <!-- <app-similar-items></app-similar-items> -->
+    <app-similar-items *ngIf="!isMenuVisible" [auction]="auction" [similarAuctions]="similarAuctions" (anEventEmitter)="dataFromChild($event)"></app-similar-items>
+    <app-auction-menu *ngIf="isMenuVisible" (anEventEmitter)="dataFromChild($event)"></app-auction-menu>
   </div>
   <div id="rightSide">
     <h2>{{auction.item_name}}</h2>

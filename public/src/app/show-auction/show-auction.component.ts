@@ -12,6 +12,7 @@ export class ShowAuctionComponent implements OnInit {
   auction: object;
   newBid: object;
   similarAuctions: Array<object> = [];
+  isMenuVisible: boolean = false;
 
   constructor(
     private _httpService: HttpService,
@@ -53,8 +54,6 @@ export class ShowAuctionComponent implements OnInit {
     })
   }
 
-
-
   createBid() {
     // temp
     this.newBid = {
@@ -72,5 +71,9 @@ export class ShowAuctionComponent implements OnInit {
         this.auction = res['data'];
       }
     })
+  }
+
+  dataFromChild(eventData) {
+    this.isMenuVisible = eventData;
   }
 }
