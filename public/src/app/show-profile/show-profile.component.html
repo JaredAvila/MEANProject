@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div id="profWrap">
   <div id="wrap">
     <h1>Jared's profile</h1>
@@ -24,6 +25,30 @@
         </app-show-wallet>
       </div>
     </div>
+=======
+<div id="wrap">
+  <h1>Jared's profile</h1>
+  <div id="userLinks">
+    <button (click)="editProfile()" class="bttn bttn-dark">
+      Edit Personal Info
+    </button>
+    <button (click)="showAuctionsCreated()" class="bttn bttn-dark">
+      My Auctions
+    </button>
+    <button (click)="showAuctionsWatched()" class="bttn bttn-dark">
+      Watched Auctions
+    </button>
+  </div>
+  <div id="userInfo">
+    <h1 id="walletH1">Personal Info</h1>
+    <p>
+      Name: {{ childShowProfile.first_name }} {{ childShowProfile.last_name }}
+    </p>
+    <p>Email: {{ childShowProfile.email }}</p>
+
+    <app-show-wallet *ngIf="walletToPass" [childShowWallet]="walletToPass"></app-show-wallet>
+  
+>>>>>>> kirksafezone1235
   </div>
   <div id="sideShow">
     <app-edit-profile
