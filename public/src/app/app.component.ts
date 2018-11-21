@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
 import * as $ from 'jquery';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,10 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _httpService: HttpService,
+    private _route: ActivatedRoute
   ) { }
   
   ngOnInit() {
-    this.userId = sessionStorage.getItem('userId')
     //-----------------jQuery--------------------------------------------------
     $('document').ready(function () {
       $("#SearchIcon").on('click', function () {
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
         $("#footerCats").toggle(200);
       })
     });
-    this.createDefaultCategories();
+    // this.createDefaultCategories();
   }
 
   createDefaultCategories() {

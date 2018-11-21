@@ -6,8 +6,6 @@ import { LoginComponent } from "./login/login.component";
 import { RegistrationComponent } from "./registration/registration.component";
 import { NewAuctionComponent } from "./new-auction/new-auction.component";
 import { ShowAuctionComponent } from "./show-auction/show-auction.component";
-import { SimilarItemsComponent } from "./similar-items/similar-items.component";
-import { AuctionMenuComponent } from "./auction-menu/auction-menu.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ShowProfileComponent } from './show-profile/show-profile.component';
@@ -19,6 +17,7 @@ import { ShowAuctionsCreatedComponent } from './show-auctions-created/show-aucti
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },
+  { path: "home/login/:id", component: HomeComponent },
   { path: "home/:categoryName", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
@@ -32,7 +31,8 @@ const routes: Routes = [
   // ]},
 
   { path: "auctions/new", component: NewAuctionComponent },
-  { path: "auctions/:id", component: ShowAuctionComponent }
+  { path: "auctions/:id", component: ShowAuctionComponent },
+
 ];
 
 @NgModule({

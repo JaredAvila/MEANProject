@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
-import { filter } from "rxjs/operators";
+import { filter, concatAll } from "rxjs/operators";
 import * as $ from "jquery";
 import { HttpService } from "../http.service";
 
@@ -44,24 +44,24 @@ export class HomeComponent implements OnInit {
     });
 
     //carousel imgages-------------------------------------------
-    this.items = [
-      { name: "assets/img/prod1.jpeg" },
-      { name: "assets/img/prod2.jpeg" },
-      { name: "assets/img/prod3.jpeg" },
-      { name: "assets/img/prod4.jpeg" },
-      { name: "assets/img/prod5.jpeg" },
-      { name: "assets/img/prod6.jpeg" },
-      { name: "assets/img/prod7.jpeg" },
-      { name: "assets/img/prod1.jpeg" },
-      { name: "assets/img/prod2.jpeg" },
-      { name: "assets/img/prod3.jpeg" },
-      { name: "assets/img/prod4.jpeg" },
-      { name: "assets/img/prod5.jpeg" },
-      { name: "assets/img/prod6.jpeg" },
-      { name: "assets/img/prod7.jpeg" }
-    ];
-    // this.getAllAuctions();
-    this.getIdFromUrl();
+    // this.items = [
+    //   { name: "assets/img/prod1.jpeg" },
+    //   { name: "assets/img/prod2.jpeg" },
+    //   { name: "assets/img/prod3.jpeg" },
+    //   { name: "assets/img/prod4.jpeg" },
+    //   { name: "assets/img/prod5.jpeg" },
+    //   { name: "assets/img/prod6.jpeg" },
+    //   { name: "assets/img/prod7.jpeg" },
+    //   { name: "assets/img/prod1.jpeg" },
+    //   { name: "assets/img/prod2.jpeg" },
+    //   { name: "assets/img/prod3.jpeg" },
+    //   { name: "assets/img/prod4.jpeg" },
+    //   { name: "assets/img/prod5.jpeg" },
+    //   { name: "assets/img/prod6.jpeg" },
+    //   { name: "assets/img/prod7.jpeg" }
+    // ];
+    
+    this.getAllAuctions();
   }
 
   getIdFromUrl() {
@@ -78,17 +78,70 @@ export class HomeComponent implements OnInit {
   getAllAuctions() {
     let obs = this._httpService.getAllAuctions();
     obs.subscribe(res => {
+      console.log(res);
       if (res["errors"]) {
         console.log("error");
       } else {
         this.auctions = res["data"];
+        this.randomizedCarousel(this.auctions);
+        console.log(this.items);
       }
     });
   }
+
+  randomizedCarousel(array) {
+    var n = 6, i;
+    var idxs = [];
+
+    // While there remain elements to shuffle…
+    while (n) {
+  
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * array.length);
+  
+      // If not already shuffled, move it to the new array.
+      if (!this.contains.call(idxs, i)) {
+        idxs.push(i);
+        n--;
+      }
+    }
+
+    for (var idx of idxs) {
+      this.items.push(array[idx]);
+    }
+  }
+
   getAuctionsByCategoryName(categoryName) {
     let obs = this._httpService.getAuctionsByCategoryName(categoryName);
     obs.subscribe(res => {
       this.auctions = res["data"]["auctions"];
     });
   }
+
+  contains(num) {
+    // Per spec, the way to identify NaN is that it is not equal to itself
+    var findNaN = num !== num;
+    var indexOf;
+
+    if (!findNaN && typeof Array.prototype.indexOf === 'function') {
+      indexOf = Array.prototype.indexOf;
+    } else {
+      indexOf = function (num) {
+        var i = -1, index = -1;
+
+        for (i = 0; i < this.length; i++) {
+          var item = this[i];
+
+          if ((findNaN && item !== item) || item === num) {
+            index = i;
+            break;
+          }
+        }
+
+        return index;
+      };
+    }
+
+    return indexOf.call(this, num) > -1;
+  };
 }

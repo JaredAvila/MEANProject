@@ -23,6 +23,7 @@ module.exports = function() {
         starting_bid: {type: Number, required: [true, 'Starting bid cannot be blank'] },
         start_date: {type: Date, required: [true, 'Start date cannot be blank'] },
         duration: {type: String, required: [true, 'Duration cannot be blank'] },
+        category: {type: String, required: [true, 'Category cannot be blank'] },
         bids: [bidSchema],
     }, {timestamps: true });
 
@@ -46,7 +47,7 @@ module.exports = function() {
     }, {timestamps: true });
 
     var categorySchema = new mongoose.Schema({
-        name: { type: String, required: [true, "Category name cannot be blank"] },
+        name: { type: String, required: [true, "Category name cannot be blank"], unique: true},
         auctions: [auctionSchema],
     })
 

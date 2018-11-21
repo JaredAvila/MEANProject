@@ -26,17 +26,17 @@
       </ng-template>
       <ng-template #item let-item let-i="index">
         <div class="items">
-          <img src="{{ item.name }}">
+          <img src="{{ item.image }}">
         </div>
       </ng-template>
     </div>
 
     <div id="auctions">
-      <div *ngFor="let item of auctions" class="auction">
-        <img src="{{item.image}}"
+      <div *ngFor="let auc of auctions" class="auction">
+        <img src="{{auc.image}}"
           alt="">
         <div id="cardInfo">
-          <h3>{{item.item_name}}</h3>
+          <h3>{{auc.item_name}}</h3>
           <p>Current bid:</p>
           <h2>$24.99</h2>
           <p>Time left:</p>
@@ -44,7 +44,7 @@
         </div>
         <div id="cardBtns">
           <button class="bttn bttn-green">Bid Now</button>
-          <button [routerLink]="['/auctions', item._id]" routerLinkActive="router-link-active"  class="bttn bttn-ltBlue">View Auction</button>
+          <button [routerLink]="['/auctions', auc._id]" routerLinkActive="router-link-active"  class="bttn bttn-ltBlue">View Auction</button>
         </div>
       </div>
     </div>

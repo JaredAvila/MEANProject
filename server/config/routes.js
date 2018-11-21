@@ -1,6 +1,7 @@
 const users = require('../controllers/users')
 const auctions = require('../controllers/auctions')
 const categories = require('../controllers/categories')
+const dumdum = require('../config/dummyDataGen')
 const bids = require('../controllers/bids')
 const path = require('path')
 
@@ -86,6 +87,9 @@ module.exports = function(app) {
     // MISC
     app.post('/api/createCategories', (req, res) => {
         categories.defaultCategories(req, res)
+    })
+    app.get('/dumdum', (req, res) => {
+        dumdum(req, res)
     })
 
     app.all("*", (req, res, next) => {

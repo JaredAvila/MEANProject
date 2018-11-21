@@ -25,12 +25,13 @@ module.exports = {
         })
     },
     getCategoryByAuctionId: (req, res) => {
+        console.log(req.params.auctionId);
         Category.findOne({"auctions._id": req.params.auctionId}, (err, category) => {
             if (err) {
                 console.log(err)
                 res.json({status: false, message: "Get Category By Auction Id", data: err})
             } else {
-                console.log(category)
+                console.log("Get Category By Auction Id", category)
                 res.json({status: true, message: "Get Category By Auction Id", data: category})
             }
         })
@@ -68,8 +69,7 @@ module.exports = {
         })
     },
     defaultCategories: (req, res) => {
-        console.log(req.body.name);
-        
+        // console.log(req.body.name);
         Category.update({name: req.body.name}, {$set: {name: req.body.name}}, {upsert: true}, (err, cat) => {
             if (err) {
                 console.log(err)
