@@ -3,7 +3,9 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { Ng2CarouselamosModule } from "ng2-carouselamos";
+
 import { DurationPickerModule } from "ngx-duration-picker";
+import { CountdownModule } from 'ngx-countdown';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpService } from "./http.service";
@@ -33,15 +35,16 @@ import { ShowAuctionsCreatedComponent } from './show-auctions-created/show-aucti
     ShowAuctionComponent,
     SimilarItemsComponent,
     AuctionMenuComponent,
+    ShowProfileComponent,
     UserProfileComponent,
     EditProfileComponent,
-    ShowProfileComponent,
     ShowWalletComponent,
     ShowAuctionsWatchedComponent,
     ShowAuctionsCreatedComponent
   ],
   imports: [
     BrowserModule,
+    CountdownModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,

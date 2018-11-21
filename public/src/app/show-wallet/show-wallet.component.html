@@ -3,13 +3,12 @@
   Current balance:
   <span id="greenTxt">${{ childShowWallet.wallet_balance }}</span>
 </p>
-<form id="walletForm" (submit)="updateUserById()">
+<form id="walletForm" (submit)="updateWalletbalance()">
   <p>Add to wallet:</p>
 
   <input
     class="inputs"
-    name="childShowWallet.wallet_balance"
-    [(ngModel)]="childShowWallet.wallet_balance"
+    name="updateWallet"
     placeholder="add to your wallet"
   />
   <button class="bttn bttn-green">Add</button>
