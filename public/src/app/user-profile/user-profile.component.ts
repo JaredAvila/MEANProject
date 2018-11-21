@@ -8,11 +8,11 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
   styleUrls: ["./user-profile.component.css"]
 })
 export class UserProfileComponent implements OnInit {
-  user: object;
-  profileToPass: object;
-  // walletToPass : object
-  auctionsWatchedToPass: object;
-  auctionsCreatedToPass: object;
+  user : object
+  profileToPass : object
+  walletToPass : object
+  auctionsWatchedToPass : object
+  auctionsCreatedToPass : object
   userId: string;
 
   constructor(
@@ -45,7 +45,7 @@ export class UserProfileComponent implements OnInit {
 
   showProfile() {
     this.profileToPass = this.user;
-    // this.walletToPass = null;
+    this.walletToPass = null;
     this.auctionsWatchedToPass = null;
     this.auctionsCreatedToPass = null;
   }

@@ -22,8 +22,8 @@ export class HttpService {
   updateUserById(id: string, user: object) {
     return this._http.put('/api/users/update/' + id, user)
   }
-  updateWalletById(id: string, amount: number) {
-    return this._http.put('/api/users/update/wallet/' + id, amount)
+  updateWalletById(walletInfo: object) {
+    return this._http.put('/api/users/update/wallet', walletInfo)
   }
   nukeUserById(userId: string, categoryId: string) {
     return this._http.delete('/api/users/delete/'+ userId +'/:categoryId' + categoryId)

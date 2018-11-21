@@ -18,13 +18,23 @@ export class ShowWalletComponent implements OnInit {
     private _router: Router
   ) { }
 
+  getUser() {
+    let obs = this._httpService.getUserById(this.userId);
+    obs.subscribe(res => {
+      console.log(res);
+      this.childShowWallet.wallet_balance = res["data"][0]['wallet_balance'];
+    });
+  }
+
   ngOnInit() {
     this.userId = sessionStorage.getItem('userId')
-    this.updateWallet = 0
+    this.updateWallet = null;
   }
 
   updateWalletbalance(){
-    let obs = this._httpService.updateWalletById(this.userId, this.updateWallet);
+    console.log(this.updateWallet)
+
+    let obs = this._httpService.updateWalletById({id: this.userId, wallet_balance: this.updateWallet});
     obs.subscribe(res => {
       console.log(res)
       // if (res['data']['errors']) {
@@ -32,7 +42,8 @@ export class ShowWalletComponent implements OnInit {
       // } else {
       //   this.cancelEditProfile()
       // }
-      this.updateWallet = 0
+      this.getUser();
+      this.updateWallet = null;
     })
   }
 }

@@ -41,7 +41,7 @@ module.exports = function() {
         password: { 
             type: String, required: [true, "Password cannot be blank"], minlength: [8, "Password must contain at least 8 characters"]
         },
-        wallet_balance: { type: Number },
+        wallet_balance: { type: Number, default: 0 },
         auctions_watched: [auctionSchema],
         auctions_created: [auctionSchema],
     }, {timestamps: true });
