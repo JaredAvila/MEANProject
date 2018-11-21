@@ -24,13 +24,15 @@ export class ShowAuctionComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.auctionId = params['id'];
       this.getAuctionById()
+
+      this.newBid = {
+        "auction_id": this.auctionId,
+        "bidder_id": sessionStorage.getItem('userId'),
+        "bidder_name": sessionStorage.getItem('userFirstName')
+      }
+
     })
     this.auction = {}
-    this.newBid = {
-      auction_id: "",
-      bidder_id: "",
-      amount: ""
-    }
   }
 
   getAuctionById() {
@@ -55,20 +57,14 @@ export class ShowAuctionComponent implements OnInit {
   }
 
   createBid() {
-    // temp
-    this.newBid = {
-      "auction_id": "5bf37a0106616623c843336f",
-      "bidder_id": sessionStorage.getItem('userId'),
-      "bidder_name": sessionStorage.getItem('userFirsttName'),
-      "amount": 999
-    }
     console.log(this.newBid);
     let obs = this._httpService.createBid(this.newBid);
     obs.subscribe(res => {
+      console.log('created bid', res);
       if (res['errors']) {
         console.log(res['errors']);
       } else {
-        this.auction = res['data'];
+        this.auction = res['data']['auction'];
       }
     })
   }

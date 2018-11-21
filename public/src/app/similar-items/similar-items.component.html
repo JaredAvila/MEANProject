@@ -3,7 +3,7 @@
     <h4>Bid History</h4>
     <hr />
     <ul>
-      <li *ngFor="let bid of this.auction.bids"><p>{{bid.name}} - ${{bid.amount}} - {{bid.createdAt}}</p></li>
+      <li *ngFor="let bid of this.auction.bids"><p>{{bid.bidder_name | titlecase}} - ${{bid.amount}} - {{bid.createdAt}}</p></li>
     </ul>
   </div>
   <button class="bttn bttn-ltBlue" (click)="openMenu($event)">

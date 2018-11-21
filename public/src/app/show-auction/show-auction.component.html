@@ -11,8 +11,8 @@
       <h3>Time Left:</h3>
       <h1 id="timeer">2 d. 1 hr. 4 min. 32 s.</h1>
     </div>
-    <form>
-      <input class="inputs" type="number" min="26" value="26" />
+    <form (submit)="createBid()">
+      <input class="inputs" type="number" name="amount" [(ngModel)]="newBid.amount" />
       <button class="bttn bttn-ltBlue">1-Up</button>
     </form>
     <img src="{{auction.image}}" alt="{{auction.item_name}}" />
