@@ -7,6 +7,12 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { NewAuctionComponent } from "./new-auction/new-auction.component";
 import { ShowAuctionComponent } from "./show-auction/show-auction.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ShowProfileComponent } from './show-profile/show-profile.component';
+import { ShowWalletComponent } from './show-wallet/show-wallet.component';
+import { ShowAuctionsWatchedComponent } from './show-auctions-watched/show-auctions-watched.component';
+import { ShowAuctionsCreatedComponent } from './show-auctions-created/show-auctions-created.component';
+
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
@@ -15,6 +21,14 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
   { path: "user-profile/:id", component: UserProfileComponent },
+  // { path: "user-profile/:id", component: UserProfileComponent, children: [
+  //   { path: "show", component: ShowProfileComponent },
+  //   { path: "edit", component: EditProfileComponent },
+  //   { path: "wallet", component: ShowWalletComponent },
+  //   { path: "auction-watched", component: ShowAuctionsWatchedComponent },
+  //   { path: "auction-created", component: ShowAuctionsCreatedComponent }
+  // ]},
+
   { path: "auctions/new", component: NewAuctionComponent },
   { path: "auctions/:id", component: ShowAuctionComponent },
 

@@ -17,6 +17,11 @@ import { ShowAuctionComponent } from "./show-auction/show-auction.component";
 import { SimilarItemsComponent } from "./similar-items/similar-items.component";
 import { AuctionMenuComponent } from "./auction-menu/auction-menu.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ShowProfileComponent } from './show-profile/show-profile.component';
+import { ShowWalletComponent } from './show-wallet/show-wallet.component';
+import { ShowAuctionsWatchedComponent } from './show-auctions-watched/show-auctions-watched.component';
+import { ShowAuctionsCreatedComponent } from './show-auctions-created/show-auctions-created.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,11 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
     SimilarItemsComponent,
     AuctionMenuComponent,
     UserProfileComponent,
+    EditProfileComponent,
+    ShowProfileComponent,
+    ShowWalletComponent,
+    ShowAuctionsWatchedComponent,
+    ShowAuctionsCreatedComponent
   ],
   imports: [
     BrowserModule,

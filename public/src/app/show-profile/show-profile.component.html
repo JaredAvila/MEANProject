@@ -1,0 +1,10 @@
+<!-- show user profile -->
+<div class=" mt-3 text-white">
+  <h3 class="">User Profile</h3>
+  <h5>First Name: {{ childShowProfile.first_name}}</h5>
+  <h5>Last Name: {{ childShowProfile.last_name}}</h5>
+  <h5>Email: {{ childShowProfile.email}}</h5>
+  <a class=" mt-3 btn btn-primary" (click)="editProfile()">Edit Profile</a>
+</div>
+
+<app-edit-profile *ngIf='editToPass' [childEditProfile]="editToPass" (closeEditProfile)="closeEditProfile($event)"> </app-edit-profile>
