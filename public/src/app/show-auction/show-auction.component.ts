@@ -22,6 +22,7 @@ export class ShowAuctionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.auction = { bids: []};
     this._route.params.subscribe(params => {
       this.auctionId = params["id"];
       this.getAuctionById();
@@ -32,7 +33,6 @@ export class ShowAuctionComponent implements OnInit {
         bidder_name: sessionStorage.getItem("userFirstName")
       };
     });
-    this.auction = {};
   }
 
   getAuctionById() {
@@ -58,9 +58,26 @@ export class ShowAuctionComponent implements OnInit {
 
   createBid() {
     console.log("New bid: ", this.newBid);
+    console.log("bids ", this.auction['bids'].length);
 
-    if (this.newBid['amount'] > this.auction['bids'][0]['amount']) {
-      this.lowBidError = false;
+    if (this.auction['bids'].length > 0) {
+      if (this.newBid['amount'] > this.auction['bids'][0]['amount']) {
+        this.lowBidError = false;
+        let obs = this._httpService.createBid(this.newBid);
+        obs.subscribe(res => {
+          console.log("created bid", res);
+          if (res["errors"]) {
+            console.log(res["errors"]);
+          } else {
+            // this.auction = res['data']['auction'];
+            this.getAuctionById();
+          }
+        });
+      } else {
+        this.lowBidError = true;
+        console.log('CANT BID LOWER THAN HIGHEST BID!');
+      }
+    } else { 
       let obs = this._httpService.createBid(this.newBid);
       obs.subscribe(res => {
         console.log("created bid", res);
@@ -71,18 +88,13 @@ export class ShowAuctionComponent implements OnInit {
           this.getAuctionById();
         }
       });
-    } else {
-      this.lowBidError = true;
-      console.log('CANT BID LOWER THAN HIGHEST BID!');
-      
     }
+
+
 
   }
 
   dataFromChild(eventData) {
     this.isMenuVisible = eventData;
   }
-
-
-  
 }
