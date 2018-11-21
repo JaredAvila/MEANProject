@@ -17,19 +17,7 @@ const routes: Routes = [
   { path: "register", component: RegistrationComponent },
   { path: "user-profile/:id", component: UserProfileComponent },
   { path: "auctions/new", component: NewAuctionComponent },
-  {
-    path: "auctions/:id",
-    component: ShowAuctionComponent,
-    children: [
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "suggestions"
-      },
-      { path: "suggestions", component: SimilarItemsComponent },
-      { path: "menu", component: AuctionMenuComponent }
-    ]
-  }
+  { path: "auctions/:id", component: ShowAuctionComponent }
 ];
 
 @NgModule({

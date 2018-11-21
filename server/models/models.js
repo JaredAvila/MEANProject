@@ -12,6 +12,7 @@ module.exports = function() {
 
     var bidSchema = new mongoose.Schema({
         bidder_id: { type: String, required: [true, 'Bidder id cannot be blank'] },
+        bidder_name: { type: String, required: [true, 'Bidder name cannot be blank'] },
         amount: { type: Number, required: [true, 'Amount cannot be blank'] },
     }, {timestamps: true });
 

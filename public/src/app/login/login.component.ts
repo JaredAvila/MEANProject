@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       console.log(res);
       if (res['data']) {
         sessionStorage.setItem('userId', res['data']['userId']);
-        sessionStorage.setItem('userFirstName', res['firstName']);
+        sessionStorage.setItem('userFirstName', res['data']['firstName']);
         this._router.navigate(['/home']);
       } else {
         console.log('login error');
