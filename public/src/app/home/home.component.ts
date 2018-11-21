@@ -105,7 +105,7 @@ export class HomeComponent implements OnInit {
         n--;
       }
     }
-
+    this.items = [];
     for (var idx of idxs) {
       this.items.push(array[idx]);
     }
