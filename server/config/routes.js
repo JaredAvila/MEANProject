@@ -20,6 +20,9 @@ module.exports = function(app) {
     app.put('/api/users/update/:id', (req, res) => {
         users.updateUserById(req, res)
     })
+    app.put('/api/users/update/wallet/:id', (req, res) => {
+        users.updateWalletById(req, res)
+    })
     app.delete('/api/users/delete/:id', (req, res) => {
         users.nukeUserById(req, res)
     })

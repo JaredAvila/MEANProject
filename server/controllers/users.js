@@ -67,6 +67,25 @@ module.exports = {
       }
     );
   },
+  updateWalletById: (req, res) => {
+    User.findOne(
+      { _id: req.params.id },
+      { runValidators: true },
+      (err, user) => {
+        user.wallet_balance += req.body.wallet_balance;
+
+        user.save((err, newWalletBalance) => {
+          if (err) {
+            console.log(err);
+            res.json({ status: false, message: "Update User Wallet Balance", data: err });
+          } else {
+            console.log(newWalletBalance);
+            res.json({ status: true, message: "Update User Wallet Balance", data: newWalletBalance });
+          }
+        });
+      }
+    );
+  },
   nukeUserById: (req, res) => {
     User.deleteOne({ _id: req.params.id }, err => {
       if (err) {
