@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
     let obs = this._httpService.loginUser(this.user);
     obs.subscribe(res => {
       console.log(res);
-      if (res['data']) {
-        sessionStorage.setItem('userId', res['data']['userId']);
-        sessionStorage.setItem('userFirstName', res['data']['firstName']);
-        this._router.navigate(['/home']);
+      if (res["data"]) {
+        sessionStorage.setItem("userId", res["data"]["userId"]);
+        sessionStorage.setItem("userFirstName", res["data"]["firstName"]);
+        this._router.navigate(["/home"]);
       } else {
         console.log("login error");
       }
