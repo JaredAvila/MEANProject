@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "home/:categoryName", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
-  { path: "user-profile/:id", component: UserProfileComponent },
+  { path: "user-profile", component: UserProfileComponent },
   // { path: "user-profile/:id", component: UserProfileComponent, children: [
   //   { path: "show", component: ShowProfileComponent },
   //   { path: "edit", component: EditProfileComponent },
