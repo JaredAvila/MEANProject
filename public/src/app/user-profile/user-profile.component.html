@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <app-show-profile
   *ngIf="profileToPass"
   [childShowProfile]="profileToPass"
@@ -12,24 +11,3 @@
   >
   </app-show-auctions-watched>
 -->
-=======
-<div class="row ">
-  <div class="col-6">
-  
-  </div>
-  <div class="mb-5 col-6">
-    <app-show-profile
-      *ngIf="profileToPass"
-      [childShowProfile]="profileToPass"
-      (updateUserProfileAfterEdit)="updateUserProfile($event)"
-    >
-    </app-show-profile>
-
-    <app-show-auctions-watched
-      *ngIf="auctionsWatchedToPass"
-      [childAuctionsWatched]="auctionsWatchedToPass"
-    >
-    </app-show-auctions-watched>
-  </div>
-</div>
->>>>>>> kirksafezone1235

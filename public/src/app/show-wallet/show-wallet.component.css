@@ -2,28 +2,11 @@
   color: white;
 }
 
-<<<<<<< HEAD
 h1 {
   letter-spacing: 15px;
   color: rgb(0, 174, 255);
   text-shadow: 0px 8px 5px black;
   font-size: 35pt;
-=======
-#wrap {
-  padding: 35px;
-  background-color: rgb(44, 44, 44);
-  opacity: .9;
-  width: fit-content;
-  margin-left: auto;
-  border-radius: 6px;
-}
-
-#wrap h1 {
-  letter-spacing: 20px;
-  color: rgb(0, 174, 255);
-  text-shadow: 0px 8px 5px black;
-  font-size: 40pt;
->>>>>>> kirksafezone1235
   margin-bottom: 20px;
 }
 
@@ -33,11 +16,7 @@ h1 {
   border-radius: 6px;
 }
 
-<<<<<<< HEAD
 p {
-=======
-#userInfo p {
->>>>>>> kirksafezone1235
   margin: 25px;
   font-size: 18pt;
 }
@@ -50,7 +29,6 @@ h1#walletH1 {
 span#greenTxt {
   color: green;
   font-weight: bold;
-<<<<<<< HEAD
 }
 
 @media only screen and (max-width: 480px) {
@@ -59,6 +37,4 @@ span#greenTxt {
     font-size: 25pt;
     margin-bottom: 10px;
   }
-=======
->>>>>>> kirksafezone1235
 }
