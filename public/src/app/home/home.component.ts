@@ -30,6 +30,14 @@ export class HomeComponent implements OnInit {
       $("#hideBtn").on("click", function() {
         $("#side").animate({ height: "20px" }, 500);
       });
+      $("#auctions").on("scroll", function() {
+        if (
+          $(this).scrollTop() + $(this).innerHeight() >=
+          $(this)[0].scrollHeight
+        ) {
+          alert("End of div load more auctions");
+        }
+      });
     });
 
     //carousel imgages-------------------------------------------
@@ -59,15 +67,13 @@ export class HomeComponent implements OnInit {
         console.log("error");
       } else {
         this.auctions = res["data"];
-        console.log(this.auctions);
       }
     });
   }
   getAuctionsByCategoryName(categoryName) {
-    let obs = this._httpService.getAuctionsByCategoryName(categoryName)
+    let obs = this._httpService.getAuctionsByCategoryName(categoryName);
     obs.subscribe(res => {
-      console.log(res);
-      this.auctions = res['data']['auctions'];
-    })
+      this.auctions = res["data"]["auctions"];
+    });
   }
 }

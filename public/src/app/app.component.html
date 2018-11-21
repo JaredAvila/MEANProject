@@ -6,17 +6,17 @@
   <div id="searchBar">
     <form action="">
       <input type="text" placeholder="Search Items" />
-      <select name="">
-        <option value="">Categories</option>
-        <option value="">Autos/Transportation</option>
-        <option value="">Fashion/Accessories</option>
-        <option value="">Electronics/Tech</option>
-        <option value="">Toys/Games</option>
-        <option value="">Household/Outdoors</option>
-        <option value="">Art/Music</option>
-        <option value="">Books/Comics</option>
-        <option value="">Shoes/Clothing</option>
-        <option value="">Collectables</option>
+      <select name="d">
+        <option value="d">Categories</option>
+        <option value="d">Autos/Transportation</option>
+        <option value="d">Fashion/Accessories</option>
+        <option value="d">Electronics/Tech</option>
+        <option value="d">Toys/Games</option>
+        <option value="d">Household/Outdoors</option>
+        <option value="d">Art/Music</option>
+        <option value="d">Books/Comics</option>
+        <option value="d">Shoes/Clothing</option>
+        <option value="d">Collectables</option>
       </select>
       <button class="bttn">Search</button>
     </form>
@@ -25,9 +25,11 @@
     <button [routerLink]="['/auctions/new']" class="bttn bttn-dark">
       Start Selling
     </button>
+
     <button [routerLink]="['/register']" class="bttn bttn-clear">
       Free Registration
     </button>
+
     <p>
       <a [routerLink]="['/user-profile', userId]"
         ><i class="far fa-user"> My Profile</i></a

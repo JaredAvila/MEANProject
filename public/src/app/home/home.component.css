@@ -27,6 +27,9 @@
     display: flex;
     flex-wrap: wrap;
     padding: 40px 0;
+    max-height: 1000px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .auction {
@@ -44,12 +47,12 @@
     padding: 10px;
 }
 
-.auction h3{
+.auction h3 {
     color: rgb(0, 174, 255);
     border-bottom: 4px double rgb(0, 174, 255);
 }
 
-.auction h2{
+.auction h2 {
     color: white;
 }
 
@@ -138,8 +141,7 @@
         filter: brightness(100%);
         transform: scale(1.1);
     }
-
-    #carousel{
+    #carousel {
         display: block;
     }
 }

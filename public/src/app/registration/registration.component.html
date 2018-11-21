@@ -1,27 +1,62 @@
-<!-- <div class="cont">
-  <form (submit)="createUser()">
-    <label>First Name</label>
-    <input type="text" placeholder="First Name" name="first_name" [(ngModel)]="newUser.first_name">
-    <label>Last Name</label>
-    <input type="text" placeholder="Last Name" name="last_name" [(ngModel)]="newUser.last_name">
-    <label>Email address</label>
-    <input type="email" placeholder="Enter email" name="email" [(ngModel)]="newUser.email">
-    <label>Password</label>
-    <input type="password" placeholder="Password" name="password" [(ngModel)]="newUser.password">
-    <button type="submit">Submit</button>
-  </form>
-</div> -->
+<!--
+  <div class="cont">
+    <form (submit)="createUser()">
+      <label>First Name</label>
+      <input type="text" placeholder="First Name" name="first_name" [(ngModel)]="newUser.first_name">
+      <label>Last Name</label>
+      <input type="text" placeholder="Last Name" name="last_name" [(ngModel)]="newUser.last_name">
+      <label>Email address</label>
+      <input type="email" placeholder="Enter email" name="email" [(ngModel)]="newUser.email">
+      <label>Password</label>
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="newUser.password">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+-->
 
 <div id="wrap">
-  <div class="container">
+  <div
+    [ngClass]="{
+      error: valid,
+      success: cont,
+      container: true
+    }"
+  >
     <form (submit)="createUser()">
-      <input type="text" placeholder="FIRST NAME" name="first_name" [(ngModel)]="newUser.first_name">
-      <input type="text" placeholder="LAST NAME" name="last_name" [(ngModel)]="newUser.last_name">
-      <input type="email" placeholder="EMAIL" name="email" [(ngModel)]="newUser.email">
-      <input type="password" placeholder="PASSWORD" name="password" [(ngModel)]="newUser.password">
+      <input
+        type="text"
+        placeholder="FIRST NAME"
+        name="first_name"
+        [(ngModel)]="newUser.first_name"
+      />
+      <p style="color: rgb(209, 13, 13);">{{ errors.first_name?.message }}</p>
+      <input
+        type="text"
+        placeholder="LAST NAME"
+        name="last_name"
+        [(ngModel)]="newUser.last_name"
+      />
+      <p style="color: rgb(209, 13, 13);">{{ errors.last_name?.message }}</p>
+      <input
+        type="email"
+        placeholder="EMAIL"
+        name="email"
+        [(ngModel)]="newUser.email"
+      />
+      <p style="color: rgb(209, 13, 13);">{{ errors.email?.message }}</p>
+      <input
+        type="password"
+        placeholder="PASSWORD"
+        name="password"
+        [(ngModel)]="newUser.password"
+      />
+      <p style="color: rgb(209, 13, 13);">{{ errors.password?.message }}</p>
       <button type="submit" class="button">SUBMIT</button>
-      <!--__________________Error messages________________________________________________________________-->
+      <!--
+        __________________Error messages________________________________________________________________
+      -->
       <p style="color: rgb(209, 13, 13);"></p>
       <p><a [routerLink]="['/login']">Login</a></p>
     </form>
   </div>
+</div>
