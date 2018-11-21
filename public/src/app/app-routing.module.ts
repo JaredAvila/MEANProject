@@ -17,6 +17,7 @@ import { ShowAuctionsCreatedComponent } from './show-auctions-created/show-aucti
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },
+  { path: "home/login/:id", component: HomeComponent },
   { path: "home/:categoryName", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
