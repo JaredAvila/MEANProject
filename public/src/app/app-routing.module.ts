@@ -13,23 +13,12 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },
+  { path: "home/:categoryName", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegistrationComponent },
   { path: "user-profile/:id", component: UserProfileComponent },
   { path: "auctions/new", component: NewAuctionComponent },
-  {
-    path: "auctions/:id",
-    component: ShowAuctionComponent,
-    children: [
-      {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "suggestions"
-      },
-      { path: "suggestions", component: SimilarItemsComponent },
-      { path: "menu", component: AuctionMenuComponent }
-    ]
-  }
+  { path: "auctions/:id", component: ShowAuctionComponent }
 ];
 
 @NgModule({

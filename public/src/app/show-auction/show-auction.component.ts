@@ -8,10 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./show-auction.component.css']
 })
 export class ShowAuctionComponent implements OnInit {
-  @Input() auctionId: string;
+  auctionId: string;
   auction: object;
   newBid: object;
   similarAuctions: Array<object> = [];
+  isMenuVisible: boolean = false;
 
   constructor(
     private _httpService: HttpService,
@@ -23,24 +24,25 @@ export class ShowAuctionComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.auctionId = params['id'];
       this.getAuctionById()
+
+      this.newBid = {
+        "auction_id": this.auctionId,
+        "bidder_id": sessionStorage.getItem('userId'),
+        "bidder_name": sessionStorage.getItem('userFirstName')
+      }
+
     })
-    this.newBid = {
-      auction_id: "",
-      bidder_id: "",
-      amount: ""
-    }
+    this.auction = {}
   }
 
   getAuctionById() {
     let obs = this._httpService.getAuctionById(this.auctionId);
     obs.subscribe(res => {
-      console.log(res);
       if (res['errors']) {
         console.log(res['errors']);
       } else {
         this.auction = res['data'];
         console.log(this.auction);
-        console.log(this.auction['_id']);
         this.getCategoryByAuctionId(this.auction['_id']);
       }
     })
@@ -49,28 +51,26 @@ export class ShowAuctionComponent implements OnInit {
   getCategoryByAuctionId(auctionId) {
     let obs = this._httpService.getCategoryByAuctionId(auctionId)
     obs.subscribe(res => {
-      console.log("category", res);
       this.similarAuctions = res['data']['auctions'];
       console.log("similar auctions", this.similarAuctions);
     })
   }
 
   createBid() {
-    // temp
-    this.newBid = {
-      "auction_id": "5bf37a0106616623c843336f",
-      "bidder_id": sessionStorage.getItem('userId'),
-      "amount": 999
-    }
     console.log(this.newBid);
     let obs = this._httpService.createBid(this.newBid);
     obs.subscribe(res => {
-      console.log(res);
+      console.log('created bid', res);
       if (res['errors']) {
         console.log(res['errors']);
       } else {
-        this.auction = res['data'];
+        // this.auction = res['data']['auction'];
+        this.getAuctionById();
       }
     })
+  }
+
+  dataFromChild(eventData) {
+    this.isMenuVisible = eventData;
   }
 }

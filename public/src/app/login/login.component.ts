@@ -26,11 +26,19 @@ export class LoginComponent implements OnInit {
   loginUser() {
     let obs = this._httpService.loginUser(this.user);
     obs.subscribe(res => {
+<<<<<<< HEAD
       console.log("this is the resposne: ", res);
       if (res["data"]) {
         sessionStorage.setItem("userId", res["data"]["userId"]);
         sessionStorage.setItem("userFirstName", res["firstName"]);
         this._router.navigate(["/home"]);
+=======
+      console.log(res);
+      if (res['data']) {
+        sessionStorage.setItem('userId', res['data']['userId']);
+        sessionStorage.setItem('userFirstName', res['data']['firstName']);
+        this._router.navigate(['/home']);
+>>>>>>> b98c4a69c28c773f1664355e58d6571e875caff8
       } else {
         console.log("login error");
       }
