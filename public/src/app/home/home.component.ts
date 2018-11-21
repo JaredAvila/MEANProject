@@ -11,9 +11,10 @@ import { HttpService } from "../http.service";
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private router: Router, 
+    private router: Router,
     private _route: ActivatedRoute,
-    private _httpService: HttpService) {}
+    private _httpService: HttpService
+  ) {}
 
   items: Array<any> = [];
   auctions: Array<object> = [];
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
           $(this).scrollTop() + $(this).innerHeight() >=
           $(this)[0].scrollHeight
         ) {
-          alert("End of div load more auctions");
+          console.log("End of div load more auctions");
         }
       });
     });
@@ -62,17 +63,16 @@ export class HomeComponent implements OnInit {
     // this.getAllAuctions();
     this.getIdFromUrl();
   }
-  
+
   getIdFromUrl() {
     this._route.params.subscribe(params => {
-      if (params['categoryName']) {
-        this.getAuctionsByCategoryName(params['categoryName']);
-        console.log("INIT", params['categoryName']);
-        
+      if (params["categoryName"]) {
+        this.getAuctionsByCategoryName(params["categoryName"]);
+        console.log("INIT", params["categoryName"]);
       } else {
         this.getAllAuctions();
       }
-    })
+    });
   }
 
   getAllAuctions() {
