@@ -6,8 +6,7 @@
       <ul>
         <li *ngFor="let bid of this.auction.bids">
           <p>
-            {{ bid.bidder_name | titlecase }} - ${{ bid.amount }} -
-            {{ bid.createdAt }}
+            {{ bid.bidder_name | titlecase }} - ${{ bid.amount }} - {{ bid.createdAt | date:'MMMM d, y - h:mm a'}}
           </p>
         </li>
       </ul>

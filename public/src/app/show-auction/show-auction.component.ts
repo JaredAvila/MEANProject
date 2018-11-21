@@ -51,7 +51,7 @@ export class ShowAuctionComponent implements OnInit {
     let obs = this._httpService.getCategoryByAuctionId(auctionId);
     obs.subscribe(res => {
       this.similarAuctions = res["data"]["auctions"];
-      console.log("similar auctions", this.similarAuctions);
+      // console.log("similar auctions", this.similarAuctions);
     });
   }
 
