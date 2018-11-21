@@ -1,10 +1,49 @@
-<!-- show user profile -->
-<div class=" mt-3 text-white">
-  <h3 class="">User Profile</h3>
-  <h5>First Name: {{ childShowProfile.first_name}}</h5>
-  <h5>Last Name: {{ childShowProfile.last_name}}</h5>
-  <h5>Email: {{ childShowProfile.email}}</h5>
-  <a class=" mt-3 btn btn-primary" (click)="editProfile()">Edit Profile</a>
+<div id="wrap">
+  <h1>Jared's profile</h1>
+  <div id="userLinks">
+    <button (click)="editProfile()" class="bttn bttn-dark">
+      Edit Personal Info
+    </button>
+    <button (click)="showAuctionsCreated()" class="bttn bttn-dark">
+      My Auctions
+    </button>
+    <button (click)="showAuctionsWatched()" class="bttn bttn-dark">
+      Watched Auctions
+    </button>
+  </div>
+  <div id="userInfo">
+    <h1 id="walletH1">Personal Info</h1>
+    <p>
+      Name: {{ childShowProfile.first_name }} {{ childShowProfile.last_name }}
+    </p>
+    <p>Email: {{ childShowProfile.email }}</p>
+    <div id="wallet">
+      <app-show-wallet *ngIf="walletToPass" [childShowWallet]="walletToPass">
+      </app-show-wallet>
+      <h1 id="walletH1">My Wallet</h1>
+      <p>Current balance: <span id="greenTxt">$115</span></p>
+      <form id="walletForm">
+        <input class="inputs" placeholder="Add to wallet" />
+        <button class="bttn bttn-green">Add</button>
+      </form>
+    </div>
+  </div>
+  <div id="sideShow">
+    <app-edit-profile
+      *ngIf="editToPass"
+      [childEditProfile]="editToPass"
+      (closeEditProfile)="closeEditProfile($event)"
+    >
+    </app-edit-profile>
+    <app-show-auctions-watched
+      *ngIf="auctionsWatchedToPass"
+      [childAuctionsWatched]="auctionsWatchedToPass"
+    >
+    </app-show-auctions-watched>
+    <app-show-auctions-created
+      *ngIf="auctionsCreatedToPass"
+      [childAuctionsCreated]="auctionsCreatedToPass"
+    >
+    </app-show-auctions-created>
+  </div>
 </div>
-
-<app-edit-profile *ngIf='editToPass' [childEditProfile]="editToPass" (closeEditProfile)="closeEditProfile($event)"> </app-edit-profile>

@@ -2,9 +2,16 @@
   <div id="bidHist">
     <h4>Bid History</h4>
     <hr />
-    <ul>
-      <li *ngFor="let bid of this.auction.bids"><p>{{bid.bidder_name | titlecase}} - ${{bid.amount}} - {{bid.createdAt}}</p></li>
-    </ul>
+    <div id="biddyBids">
+      <ul>
+        <li *ngFor="let bid of this.auction.bids">
+          <p>
+            {{ bid.bidder_name | titlecase }} - ${{ bid.amount }} -
+            {{ bid.createdAt }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
   <button class="bttn bttn-ltBlue" (click)="openMenu($event)">
     Browse other Categories
@@ -13,9 +20,11 @@
   <div id="similarItems">
     <div *ngFor="let item of similarAuctions" class="cards">
       <img src="{{item.image}}" alt="" />
-      <h3>{{item.item_name}}</h3>
+      <h3>{{ item.item_name }}</h3>
       <p>Current Bid: $12.00</p>
-      <button [routerLink]="['/auctions', item._id]" class="bttn bttn-ltBlue">View</button>
+      <button [routerLink]="['/auctions', item._id]" class="bttn bttn-ltBlue">
+        View
+      </button>
     </div>
   </div>
 </div>
