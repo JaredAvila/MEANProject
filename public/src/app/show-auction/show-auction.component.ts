@@ -64,7 +64,8 @@ export class ShowAuctionComponent implements OnInit {
       if (res['errors']) {
         console.log(res['errors']);
       } else {
-        this.auction = res['data']['auction'];
+        // this.auction = res['data']['auction'];
+        this.getAuctionById();
       }
     })
   }
