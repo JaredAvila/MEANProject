@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
     //   { name: "assets/img/prod7.jpeg" }
     // ];
     
-    this.getAllAuctions();
+    this.getIdFromUrl()
   }
 
   getIdFromUrl() {
@@ -115,6 +115,8 @@ export class HomeComponent implements OnInit {
     let obs = this._httpService.getAuctionsByCategoryName(categoryName);
     obs.subscribe(res => {
       this.auctions = res["data"]["auctions"];
+      console.log(this.auctions);
+      this.randomizedCarousel(this.auctions);
     });
   }
 

@@ -13,6 +13,7 @@ export class ShowAuctionComponent implements OnInit {
   newBid: object;
   similarAuctions: Array<object> = [];
   isMenuVisible: boolean = false;
+  lowBidError: boolean = false;
 
   constructor(
     private _httpService: HttpService,
@@ -57,16 +58,25 @@ export class ShowAuctionComponent implements OnInit {
 
   createBid() {
     console.log("New bid: ", this.newBid);
-    let obs = this._httpService.createBid(this.newBid);
-    obs.subscribe(res => {
-      console.log("created bid", res);
-      if (res["errors"]) {
-        console.log(res["errors"]);
-      } else {
-        // this.auction = res['data']['auction'];
-        this.getAuctionById();
-      }
-    });
+
+    if (this.newBid > this.auction['bids'][0]['amount']) {
+      this.lowBidError = false;
+      let obs = this._httpService.createBid(this.newBid);
+      obs.subscribe(res => {
+        console.log("created bid", res);
+        if (res["errors"]) {
+          console.log(res["errors"]);
+        } else {
+          // this.auction = res['data']['auction'];
+          this.getAuctionById();
+        }
+      });
+    } else {
+      this.lowBidError = true;
+      console.log('CANT BID LOWER THAN HIGHEST BID!');
+      
+    }
+
   }
 
   dataFromChild(eventData) {

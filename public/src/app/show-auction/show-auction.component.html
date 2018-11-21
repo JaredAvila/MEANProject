@@ -13,6 +13,7 @@
     </div>
     <form (submit)="createBid()">
       <input class="inputs" type="number" name="amount" [(ngModel)]="newBid.amount" />
+      <div *ngIf="lowBidError" class="error" style="color: rgb(209, 13, 13); padding:3px; font-size: 14pt; font-weight: bold; text-shadow: 0px 0px 1px black; letter-spacing: 1px;">Cant bid lower than {{auction.bids[0].amount | currency: 'USD'}}</div>
       <button class="bttn bttn-ltBlue">1-Up</button>
     </form>
     <img src="{{auction.image}}" alt="{{auction.item_name}}" />
