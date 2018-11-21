@@ -6,8 +6,6 @@ import { LoginComponent } from "./login/login.component";
 import { RegistrationComponent } from "./registration/registration.component";
 import { NewAuctionComponent } from "./new-auction/new-auction.component";
 import { ShowAuctionComponent } from "./show-auction/show-auction.component";
-import { SimilarItemsComponent } from "./similar-items/similar-items.component";
-import { AuctionMenuComponent } from "./auction-menu/auction-menu.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 
 const routes: Routes = [
@@ -18,7 +16,8 @@ const routes: Routes = [
   { path: "register", component: RegistrationComponent },
   { path: "user-profile/:id", component: UserProfileComponent },
   { path: "auctions/new", component: NewAuctionComponent },
-  { path: "auctions/:id", component: ShowAuctionComponent }
+  { path: "auctions/:id", component: ShowAuctionComponent },
+
 ];
 
 @NgModule({

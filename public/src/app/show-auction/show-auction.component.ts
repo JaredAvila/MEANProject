@@ -42,7 +42,7 @@ export class ShowAuctionComponent implements OnInit {
         console.log(res['errors']);
       } else {
         this.auction = res['data'];
-        console.log(this.auction);
+        console.log("specific auction", this.auction['_id'], this.auction);
         this.getCategoryByAuctionId(this.auction['_id']);
       }
     })

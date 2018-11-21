@@ -28,7 +28,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
     ShowAuctionComponent,
     SimilarItemsComponent,
     AuctionMenuComponent,
-    UserProfileComponent
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

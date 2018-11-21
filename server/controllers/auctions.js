@@ -10,10 +10,34 @@ module.exports = {
                 console.log(err)
                 res.json({status: false, message: "Get All Auctions", data: err})
             } else {
-                console.log(auctions)
+                // console.log(auctions)
                 res.json({status: true, message: "Get All Auctions", data: auctions})
             }
         })
+        // Way 2
+        // Auction.find({}, 'auctions_created', (err, auctions) => {
+        //     if (err) {
+        //         console.log(err)
+        //         res.json({status: false, message: "Get All Auctions", data: err})
+        //     } else {
+        //         // console.log(auctions)
+        //         res.json({status: true, message: "Get All Auctions", data: auctions})
+        //     }
+        // })
+        // var query = User.find({'auctions_created': { $gt: {} }}).select('auctions_created');
+        // var query = User.find({}).select('auctions_created');
+        // var query = User.find({ "auctions_created": { $exists: true, $not: {$size: 0} } });
+
+        // Way 3
+        // query.exec((err, auctions) => {
+        //     if (err) {
+        //         console.log(err)
+        //         res.json({status: false, message: "Get All Auctions", data: err})
+        //     } else {
+        //         // console.log(auctions)
+        //         res.json({status: true, message: "Get All Auctions", data: auctions})
+        //     }
+        // });
     },
     // get all auctions in a category
     getAuctionByCategory: (req, res) => {

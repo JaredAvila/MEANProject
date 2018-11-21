@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
         $("#footerCats").toggle(200);
       })
     });
-    this.createDefaultCategories();
+    // this.createDefaultCategories();
   }
 
   createDefaultCategories() {
