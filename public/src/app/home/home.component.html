@@ -2,8 +2,12 @@
   <div id="side">
     <h2 id="catClick">Categories</h2>
     <ul>
-      <li><a [routerLink]="['/home', 'cars']">Automobiles/Transportations</a></li>
-      <li><a [routerLink]="['/home', 'accessories']">Fashion/Accessories</a></li>
+      <li>
+        <a [routerLink]="['/home', 'cars']">Automobiles/Transportations</a>
+      </li>
+      <li>
+        <a [routerLink]="['/home', 'accessories']">Fashion/Accessories</a>
+      </li>
       <li><a [routerLink]="['/home', 'tech']">Electronics/Tech</a></li>
       <li><a [routerLink]="['/home', 'toysgames']">Toys/Games</a></li>
       <li><a [routerLink]="['/home', 'house']">Household/Outdoors</a></li>
@@ -16,8 +20,15 @@
   </div>
   <div id="show">
     <div id="carousel">
-      <div ng2-carouselamos class="slides-wrapper" [items]="items" [width]="900" [$prev]="prev" [$next]="next" [$item]="item">
-      </div>
+      <div
+        ng2-carouselamos
+        class="slides-wrapper"
+        [items]="items"
+        [width]="900"
+        [$prev]="prev"
+        [$next]="next"
+        [$item]="item"
+      ></div>
       <ng-template #prev>
         <i class="fas fa-chevron-left fa-3x" id="left"></i>
       </ng-template>
@@ -25,18 +36,15 @@
         <i class="fas fa-chevron-right fa-3x" id="right"></i>
       </ng-template>
       <ng-template #item let-item let-i="index">
-        <div class="items">
-          <img src="{{ item.image }}">
-        </div>
+        <div class="items"><img src="{{ item.image }}" /></div>
       </ng-template>
     </div>
 
     <div id="auctions">
       <div *ngFor="let auc of auctions" class="auction">
-        <img src="{{auc.image}}"
-          alt="">
+        <img src="{{auc.image}}" alt="" />
         <div id="cardInfo">
-          <h3>{{auc.item_name}}</h3>
+          <h3>{{ auc.item_name }}</h3>
           <p>Current bid:</p>
           <h2>$24.99</h2>
           <p>Time left:</p>
@@ -44,10 +52,15 @@
         </div>
         <div id="cardBtns">
           <button class="bttn bttn-green">Bid Now</button>
-          <button [routerLink]="['/auctions', auc._id]" routerLinkActive="router-link-active"  class="bttn bttn-ltBlue">View Auction</button>
+          <button
+            [routerLink]="['/auctions', auc._id]"
+            routerLinkActive="router-link-active"
+            class="bttn bttn-ltBlue"
+          >
+            View Auction
+          </button>
         </div>
       </div>
     </div>
-    
   </div>
 </div>

@@ -60,8 +60,8 @@ export class HomeComponent implements OnInit {
     //   { name: "assets/img/prod6.jpeg" },
     //   { name: "assets/img/prod7.jpeg" }
     // ];
-    
-    this.getIdFromUrl()
+
+    this.getIdFromUrl();
   }
 
   getIdFromUrl() {
@@ -90,15 +90,15 @@ export class HomeComponent implements OnInit {
   }
 
   randomizedCarousel(array) {
-    var n = 6, i;
+    var n = 6,
+      i;
     var idxs = [];
 
     // While there remain elements to shuffle…
     while (n) {
-  
       // Pick a remaining element…
       i = Math.floor(Math.random() * array.length);
-  
+
       // If not already shuffled, move it to the new array.
       if (!this.contains.call(idxs, i)) {
         idxs.push(i);
@@ -125,11 +125,12 @@ export class HomeComponent implements OnInit {
     var findNaN = num !== num;
     var indexOf;
 
-    if (!findNaN && typeof Array.prototype.indexOf === 'function') {
+    if (!findNaN && typeof Array.prototype.indexOf === "function") {
       indexOf = Array.prototype.indexOf;
     } else {
-      indexOf = function (num) {
-        var i = -1, index = -1;
+      indexOf = function(num) {
+        var i = -1,
+          index = -1;
 
         for (i = 0; i < this.length; i++) {
           var item = this[i];
@@ -145,5 +146,5 @@ export class HomeComponent implements OnInit {
     }
 
     return indexOf.call(this, num) > -1;
-  };
+  }
 }
