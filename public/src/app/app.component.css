@@ -4,6 +4,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     background-color: rgb(0, 174, 255);
+    background-image: linear-gradient(rgb(0, 174, 255), rgb(17, 17, 17));
     align-items: center;
 }
 

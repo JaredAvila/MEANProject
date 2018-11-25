@@ -1,6 +1,6 @@
 <div id="profWrap">
   <div id="wrap">
-    <h1>{{ childShowProfile.first_name }}'s profile</h1>
+    <h1 id="infoMation">{{ childShowProfile.first_name }}'s profile</h1>
     <div id="userLinks">
       <button (click)="editProfile()" class="bttn bttn-dark">
         Edit Personal Info
@@ -13,7 +13,7 @@
       </button>
     </div>
     <div id="userInfo">
-      <h1 id="walletH1">Personal Info</h1>
+      <h1 id="personlH1">Personal Info</h1>
       <p>
         Name: {{ childShowProfile.first_name }} {{ childShowProfile.last_name }}
       </p>

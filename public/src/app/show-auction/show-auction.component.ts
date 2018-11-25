@@ -14,6 +14,7 @@ export class ShowAuctionComponent implements OnInit {
   similarAuctions: Array<object> = [];
   isMenuVisible: boolean = false;
   lowBidError: boolean = false;
+  timeCheck: boolean = true;
 
   constructor(
     private _httpService: HttpService,
@@ -22,7 +23,7 @@ export class ShowAuctionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.auction = { bids: []};
+    this.auction = { bids: [] };
     this._route.params.subscribe(params => {
       this.auctionId = params["id"];
       this.getAuctionById();
@@ -41,9 +42,9 @@ export class ShowAuctionComponent implements OnInit {
       if (res["errors"]) {
         console.log(res["errors"]);
       } else {
-        this.auction = res['data'];
-        console.log("specific auction", this.auction['_id'], this.auction);
-        this.getCategoryByAuctionId(this.auction['_id']);
+        this.auction = res["data"];
+        console.log("specific auction", this.auction["_id"], this.auction);
+        this.getCategoryByAuctionId(this.auction["_id"]);
       }
     });
   }
@@ -58,10 +59,10 @@ export class ShowAuctionComponent implements OnInit {
 
   createBid() {
     console.log("New bid: ", this.newBid);
-    console.log("bids ", this.auction['bids'].length);
+    console.log("bids ", this.auction["bids"].length);
 
-    if (this.auction['bids'].length > 0) {
-      if (this.newBid['amount'] > this.auction['bids'][0]['amount']) {
+    if (this.auction["bids"].length > 0) {
+      if (this.newBid["amount"] > this.auction["bids"][0]["amount"]) {
         this.lowBidError = false;
         let obs = this._httpService.createBid(this.newBid);
         obs.subscribe(res => {
@@ -75,9 +76,9 @@ export class ShowAuctionComponent implements OnInit {
         });
       } else {
         this.lowBidError = true;
-        console.log('CANT BID LOWER THAN HIGHEST BID!');
+        console.log("CANT BID LOWER THAN HIGHEST BID!");
       }
-    } else { 
+    } else {
       let obs = this._httpService.createBid(this.newBid);
       obs.subscribe(res => {
         console.log("created bid", res);
@@ -89,9 +90,6 @@ export class ShowAuctionComponent implements OnInit {
         }
       });
     }
-
-
-
   }
 
   dataFromChild(eventData) {

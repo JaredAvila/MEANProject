@@ -34,7 +34,7 @@
   overflow-y: scroll;
 }
 
-#wrap h1 {
+#wrap h1#infoMation {
   letter-spacing: 15px;
   color: rgb(0, 174, 255);
   text-shadow: 0px 8px 5px black;
@@ -58,9 +58,21 @@ h1#walletH1 {
   letter-spacing: 10px;
 }
 
+#personlH1 {
+  color: #eba206;
+  font-size: 24pt;
+  letter-spacing: 10px;
+  text-shadow: 0px 8px 5px black;
+}
+
 span#greenTxt {
   color: green;
   font-weight: bold;
+}
+
+#userLinks {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 @media only screen and (max-width: 480px) {

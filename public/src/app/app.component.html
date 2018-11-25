@@ -30,13 +30,17 @@
       Free Registration
     </button>
 
-    <!-- <p *ngIf='userId === 0'>
-      <a [routerLink]="['/login']"><i class="far fa-user"> My Profile</i></a>
-    </p> -->
+    <!--
+      <p *ngIf='userId === 0'>
+        <a [routerLink]="['/login']"><i class="far fa-user"> My Profile</i></a>
+      </p>
+    -->
 
     <!-- <p *ngIf='userId'> -->
     <p>
-      <a [routerLink]="['/user-profile']"><i class="far fa-user"> My Profile</i></a>
+      <a [routerLink]="['/user-profile']"
+        ><i class="far fa-user"> My Profile</i></a
+      >
     </p>
 
     <p>
@@ -79,19 +83,21 @@
       <li id="footerCatsHov">
         Browse Categories <i class="fas fa-caret-down"></i>
         <ul id="footerCats">
-          <li><a href="#">Autos/Transportation</a></li>
-          <li><a href="#">Fashion/Accessories</a></li>
-          <li><a href="#">Electronics/Tech</a></li>
-          <li><a href="#">Toys/Games</a></li>
-          <li><a href="#">Household/Outdoors</a></li>
-          <li><a href="#">Art/Music</a></li>
-          <li><a href="#">Books/Comics</a></li>
-          <li><a href="#">Shoes/Clothing</a></li>
-          <li><a href="#">Collectables</a></li>
+          <li><a [routerLink]="['/home', 'cars']">Autos/Transportation</a></li>
+          <li>
+            <a [routerLink]="['/home', 'accessories']">Fashion/Accessories</a>
+          </li>
+          <li><a [routerLink]="['/home', 'tech']">Electronics/Tech</a></li>
+          <li><a [routerLink]="['/home', 'toysgames']">Toys/Games</a></li>
+          <li><a [routerLink]="['/home', 'house']">Household/Outdoors</a></li>
+          <li><a [routerLink]="['/home', 'artmusic']">Art/Music</a></li>
+          <li><a [routerLink]="['/home', 'bookscomics']">Books/Comics</a></li>
+          <li><a [routerLink]="['/home', 'shoes']">Shoes/Clothing</a></li>
+          <li><a [routerLink]="['/home', 'collect']">Collectables</a></li>
         </ul>
       </li>
       <li><a href="/register">Register Free Account</a></li>
-      <li><a href="#">View Profile</a></li>
+      <li><a href="/user-profile">View Profile</a></li>
       <li><a href="#">Contact Us</a></li>
     </ul>
   </div>
@@ -100,13 +106,17 @@
       <span class="nums">109,420</span> items currently up for bid, go and
       <span>1-up</span> someone!
     </h2>
-    <img src="../assets/img/apple.png" alt="" />
+    <a href="https://www.apple.com/ios/app-store/" target="_blank"
+      ><img src="../assets/img/apple.png" alt=""
+    /></a>
   </div>
   <div class="downloads footerDivs">
     <h2>
       <span class="nums">Download</span> our fantastic
       <span>mobile app</span> for free!
     </h2>
-    <img src="../assets/img/google.png" alt="" />
+    <a href="https://play.google.com/store?hl=en" target="_blank"
+      ><img src="../assets/img/google.png" alt=""
+    /></a>
   </div>
 </div>

@@ -1,25 +1,51 @@
 <div id="wrap">
   <div id="leftSide">
-    <app-similar-items *ngIf="!isMenuVisible" [auction]="auction" [similarAuctions]="similarAuctions" (anEventEmitter)="dataFromChild($event)"></app-similar-items>
-    <app-auction-menu *ngIf="isMenuVisible" (anEventEmitter)="dataFromChild($event)"></app-auction-menu>
+    <app-similar-items
+      *ngIf="!isMenuVisible"
+      [auction]="auction"
+      [similarAuctions]="similarAuctions"
+      (anEventEmitter)="dataFromChild($event)"
+    ></app-similar-items>
+    <app-auction-menu
+      *ngIf="isMenuVisible"
+      (anEventEmitter)="dataFromChild($event)"
+    ></app-auction-menu>
   </div>
   <div id="rightSide">
-    <h2>{{auction.item_name | titlecase}}</h2>
+    <h2>{{ auction.item_name | titlecase }}</h2>
     <div id="currentInfo">
       <div *ngIf="auction.bids.length > 0">
-        <h3>Current High Bidder: <span id="highBid">{{auction.bids[0].bidder_name | titlecase }}</span></h3>
-        <h1>{{auction.bids[0].amount | currency: 'USD'}}</h1>
+        <h3>
+          Current High Bidder:
+          <span id="highBid">{{
+            auction.bids[0].bidder_name | titlecase
+          }}</span>
+        </h3>
+        <h1>{{ auction.bids[0].amount | currency: "USD" }}</h1>
       </div>
       <div *ngIf="auction.bids.length == 0">
         <h3>Current High Bidder: <span id="highBid">None</span></h3>
         <h1>$ 0</h1>
       </div>
       <h3>Time Left:</h3>
-      <h1 id="timeer"><countdown [config]="{leftTime: 1000 * 10}">$!m!:$!s!</countdown></h1>
+      <h1 [ngClass]="{ countdown: timeCheck }">
+        <countdown [config]="{ leftTime: 1000 * 10 }">$!m!:$!s!</countdown>
+      </h1>
     </div>
     <form (submit)="createBid()">
-      <input class="inputs" type="number" name="amount" [(ngModel)]="newBid.amount" />
-      <div *ngIf="lowBidError" class="error" style="color: rgb(209, 13, 13); padding:3px; font-size: 14pt; font-weight: bold; text-shadow: 0px 0px 1px black; letter-spacing: 1px;">Cant bid lower than {{auction.bids[0].amount | currency: 'USD'}}</div>
+      <input
+        class="inputs"
+        type="number"
+        name="amount"
+        [(ngModel)]="newBid.amount"
+      />
+      <div
+        *ngIf="lowBidError"
+        class="error"
+        style="color: rgb(209, 13, 13); padding:3px; font-size: 14pt; font-weight: bold; text-shadow: 0px 0px 1px black; letter-spacing: 1px;"
+      >
+        Cant bid lower than {{ auction.bids[0].amount | currency: "USD" }}
+      </div>
       <button class="bttn bttn-ltBlue">1-Up</button>
     </form>
     <img src="{{auction.image}}" alt="{{auction.item_name}}" />
